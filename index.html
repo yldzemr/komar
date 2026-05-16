@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komar | Emre Yıldız</title>
+    
+    <!-- Fotoğraf Slider'ı için gerekli dünya standardı altyapı -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+    <style>
+        /* ÇağlarArts Beyaz Minimalizm Ayarları */
+        body { 
+            background-color: #ffffff; 
+            color: #000000; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Üst Logo ve Menü Alanı (ÇağlarArts Düzeni) */
+        header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 50px 8%; 
+            background: #ffffff;
+        }
+        .logo { 
+            font-weight: 700; 
+            letter-spacing: 4px; 
+            font-size: 1.4rem; 
+            text-decoration: none;
+            color: #000000;
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #000000; 
+            margin-left: 40px; 
+            font-size: 0.85rem; 
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        /* İçerik Alanı (Videolar ve Fotoğraflar) */
+        .container { 
+            max-width: 84%; 
+            margin: 0 auto; 
+            padding-bottom: 100px;
+        }
+
+        /* Video Bölümü */
+        .proje-kutusu {
+            margin-bottom: 100px;
+        }
+        .video-container { 
+            position: relative; 
+            padding-bottom: 56.25%; /* 16:9 Sinematik Oran */
+            height: 0; 
+            overflow: hidden; 
+            background: #fcfcfc;
+        }
+        .video-container iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            border: none;
+        }
+        .proje-baslik {
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+        .proje-detay {
+            font-size: 0.85rem;
+            color: #666;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* Fotoğraf Slider Bölümü */
+        .swiper { 
+            width: 100%; 
+            height: 650px; 
+            margin-top: 30px;
+        }
+        .swiper-slide img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; /* Fotoğrafları bozmadan sinematik keser */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ÜST MENÜ -->
+    <header>
+        <a href="#" class="logo">KOMAR</a>
+        <nav>
+            <a href="#">WORK</a>
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>
+        </nav>
+    </header>
+
+    <!-- ANA İÇERİK -->
+    <div class="container">
+
+        <!-- PROJE 1: VİDEO EMBED -->
+        <div class="proje-kutusu">
+            <div class="video-container">
+                <!-- YouTube veya Vimeo Embed Kodunu Buraya Yapıştıracağız -->
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+            <h2 class="proje-baslik">Neither Black Nor White</h2>
+            <p class="proje-detay">Director & DP • Short Film</p>
+        </div>
+
+        <!-- PROJE 2: FOTOĞRAF SLIDER (SET KARELERİ) -->
+        <div class="proje-kutusu">
+            <h2 class="proje-baslik">Selected Frames</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Fotoğraflarının internetteki linklerini veya klasördeki isimlerini buraya yazacağız -->
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200" alt="Set Kareleri"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200" alt="Set Kareleri"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1492446845049-9c50cc313f00?q=80&w=1200" alt="Set Kareleri"></div>
+                </div>
+                <!-- Sağa Sola Kaydırma Okları (Siyah minimalist tasarım) -->
+                <div class="swiper-button-next" style="color: #000;"></div>
+                <div class="swiper-button-prev" style="color: #000;"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Slider'ın Çalışması İçin Gereken Arka Plan Komutları -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            loop: true,
+            speed: 600
+        });
+    </script>
+</body>
+</html>
