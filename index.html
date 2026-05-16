@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KOMAR</title>
     
-    <link rel="stylesheet" href="[https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css](https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css)" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* Genel Temizlik */
@@ -67,16 +67,22 @@
             background: #f0f0f0;
         }
 
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+        }
+
         .swiper-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
-        /* Ok Tasarımları */
+        /* Navigasyon Okları */
         .swiper-button-next, .swiper-button-prev {
             color: #ffffff !important;
-            transform: scale(0.7);
+            transform: scale(0.6);
         }
 
         /* 2. BÖLÜM: Sinematik Video Oranı (16:9) */
@@ -97,7 +103,7 @@
             border: 0;
         }
 
-        /* 3. BÖLÜM: Çağlar Arts Tarzı Contact Alanı */
+        /* 3. BÖLÜM: Çağlar Arts Tarzı Minimalist Alt Alan */
         .footer-contact {
             width: 100%;
             text-align: center;
@@ -105,42 +111,42 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
         }
 
-        /* Kalın, net ve tok çerçeveli buton */
+        /* Birebir Çağlar Arts Buton Tasarımı (İnce, zarif ve tamamen küçük harf) */
         .contact-btn {
             display: inline-block;
-            padding: 16px 45px;
-            border: 2px solid #000000;
+            padding: 12px 35px; /* Kaba durmayan, sinematik iç boşluk */
+            border: 1px solid #000000; /* İncecik, kibar çerçeve */
             color: #000000;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase; /* Kurumsal ve tok durması için büyük harf standardı */
+            font-weight: 400; /* Kalın değil, kibar ve düz font ağırlığı */
+            letter-spacing: 1.5px; /* Harflerin arası hafif açık ve estetik */
+            text-transform: lowercase; /* Kesinlikle tamamen küçük harf standardı */
             transition: all 0.3s ease;
         }
 
-        /* Hover efekti (İçi simsiyah, yazısı bembeyaz olur) */
+        /* Üzerine gelince sert kararma efekti */
         .contact-btn:hover {
             background-color: #000000;
             color: #ffffff;
         }
 
-        /* Sosyal Medya */
+        /* Sosyal Medya İkonları */
         .social-links {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 25px;
-            margin-top: 10px;
+            margin-top: 5px;
             width: 100%;
         }
 
         .social-links a {
             color: #000000;
-            font-size: 24px;
+            font-size: 22px;
             transition: opacity 0.3s ease;
             text-decoration: none;
         }
@@ -158,7 +164,7 @@
                 padding: 20px 10px;
             }
             .contact-btn {
-                padding: 14px 30px;
+                padding: 10px 25px;
                 font-size: 13px;
             }
         }
@@ -176,9 +182,11 @@
             <div class="section-title">Selected Frames</div>
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="[https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200](https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200)" alt="Set"></div>
-                    <div class="swiper-slide"><img src="[https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200](https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200)" alt="Set"></div>
-                    <div class="swiper-slide"><img src="[https://images.unsplash.com/photo-1492446845049-9c50cc313f00?q=80&w=1200](https://images.unsplash.com/photo-1492446845049-9c50cc313f00?q=80&w=1200)" alt="Set"></div>
+                    
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200" alt="Set 1"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200" alt="Set 2"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1492446845049-9c50cc313f00?q=80&w=1200" alt="Set 3"></div>
+                    
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -187,21 +195,23 @@
 
         <section>
             <div class="video-wrapper">
-                <iframe src="[https://www.youtube.com/embed/dQw4w9WgXcQ](https://www.youtube.com/embed/dQw4w9WgXcQ)" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
             </div>
         </section>
 
         <footer class="footer-contact">
+            
             <a href="mailto:info@komar.studio" class="contact-btn">contact: info@komar.studio</a>
+            
             <div class="social-links">
-                <a href="[https://instagram.com](https://instagram.com)" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="[https://youtube.com](https://youtube.com)" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </footer>
 
     </div>
 
-    <script src="[https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js](https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js)"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
             loop: true,
