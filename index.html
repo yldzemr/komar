@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KOMAR</title>
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
     <style>
         * {
             margin: 0;
@@ -43,12 +41,10 @@
             flex-direction: column;
             gap: 80px;
         }
-        .section-title {
-            display: none;
-        }
         .swiper {
             width: 100%;
-            height: 550px;
+            aspect-ratio: 1200 / 800;
+            max-height: 600px;
             background: #f5f5f5;
         }
         .swiper-slide img {
@@ -60,7 +56,6 @@
             color: #ffffff !important;
             transform: scale(0.7);
         }
-        /* Slider Pagination Dots */
         .swiper-pagination {
             bottom: 20px !important;
         }
@@ -114,7 +109,6 @@
             transition: all 0.4s ease;
             background-color: transparent;
         }
-        
         .contact-btn:hover {
             background-color: #000000;
             color: #ffffff;
@@ -127,18 +121,17 @@
     </header>
     
     <div class="container">
-        <!-- Swiper Slider -->
         <div>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=1" alt="Film Camera"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=2" alt="Camera Operator"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=3" alt="Film Production"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=4" alt="Cinema Equipment"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=5" alt="Set Lighting"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=6" alt="Film Director"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=7" alt="Movie Set"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=8" alt="Film Team"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=1" alt="Foto 1"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=2" alt="Foto 2"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=3" alt="Foto 3"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=4" alt="Foto 4"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=5" alt="Foto 5"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=6" alt="Foto 6"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=7" alt="Foto 7"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=8" alt="Foto 8"></div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -146,14 +139,12 @@
             </div>
         </div>
 
-        <!-- Video -->
         <div>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/XjPSGuJskxM" allowfullscreen></iframe>
             </div>
         </div>
 
-        <!-- Footer Contact -->
         <div class="footer-contact">
             <a href="mailto:info@komar.studio" class="contact-btn">contact: info@komar.studio</a>
         </div>
