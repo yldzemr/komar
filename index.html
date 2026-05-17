@@ -121,10 +121,10 @@
         <div>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&h=800&fit=crop" alt="Film Set 1"></div>
-                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=1200&h=800&fit=crop" alt="Film Set 2"></div>
-                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=1200&h=800&fit=crop" alt="Film Set 3"></div>
-                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1479749971702-42f568dcc11e?w=1200&h=800&fit=crop" alt="Film Set 4"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1533631716787-08a0e713a3ae?w=1200&h=800&fit=crop" alt="Film Camera"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1605000981957-eb1774d71e03?w=1200&h=800&fit=crop" alt="Camera Crew"></div>
+                    <div class="swiper-slide"><img src="https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?w=1200&h=800&fit=crop" alt="Film Production"></div>
+                    <div class="swiper-slide"><img src="https://images.pexels.com/photos/3944226/pexels-photo-3944226.jpeg?w=1200&h=800&fit=crop" alt="Cinema Camera"></div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -134,7 +134,7 @@
         <!-- Video -->
         <div>
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/8hP9D5BINYw" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/Way_yIp3tDE" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -147,6 +147,11 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         new Swiper('.swiper', {
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            loop: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
