@@ -74,10 +74,16 @@
         }
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; 
-            height: 0;
-            overflow: hidden;
+            width: 100%;
+            aspect-ratio: 16 / 9;
             background: #000000;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
         }
         .video-wrapper iframe {
             position: absolute;
@@ -86,6 +92,30 @@
             width: 100%;
             height: 100%;
             border: 0;
+        }
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        .play-button:hover {
+            background: #ffffff;
+            transform: scale(1.1);
+        }
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 15px solid #000000;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            margin-left: 3px;
         }
         .footer-contact {
             width: 100%;
@@ -140,8 +170,11 @@
         </div>
 
         <div>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/XjPSGuJskxM" allowfullscreen></iframe>
+            <div class="video-wrapper" 
+                 id="videoContainer"
+                 style="background-image: url('https://img.youtube.com/vi/XjPSGuJskxM/maxresdefault.jpg');"
+                 onclick="playVideo()">
+                <div class="play-button"></div>
             </div>
         </div>
 
@@ -152,6 +185,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        function playVideo() {
+            document.getElementById('videoContainer').innerHTML = 
+            '<iframe src="https://www.youtube.com/embed/XjPSGuJskxM?autoplay=1" allowfullscreen></iframe>';
+        }
+        
         new Swiper('.swiper', {
             autoplay: {
                 delay: 6000,
