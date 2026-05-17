@@ -21,18 +21,28 @@
             min-height: 100vh;
             padding: 60px 20px;
         }
+        /* Üst Logo Bölümü - Sol Üste */
         header {
             width: 100%;
             max-width: 1200px;
-            text-align: center;
+            text-align: left;
             margin-bottom: 80px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
         }
         .logo {
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 700;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: #000000;
+            line-height: 1.2;
         }
         .container {
             width: 100%;
@@ -193,7 +203,15 @@
 </head>
 <body>
     <header>
-        <div class="logo">KOMAR</div>
+        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 20 Q60 25 65 35 Q70 45 65 55 Q60 65 50 70 Q40 65 35 55 Q30 45 35 35 Q40 25 50 20" 
+                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M50 30 Q55 32 58 38 Q60 45 58 52 Q55 58 50 60" 
+                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M38 45 L45 45 M55 45 L62 45" 
+                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="logo">KOMAR<br>ENTERTAINMENT</div>
     </header>
     
     <div class="container">
