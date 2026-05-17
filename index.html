@@ -6,15 +6,15 @@
     <title>KOMAR</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Genel Sıfırlama */
+        /* Genel Temizlik */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background-color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -25,23 +25,20 @@
             min-height: 100vh;
             padding: 40px 20px;
         }
-
-        /* Üst Logo */
+        /* Üst Logo Bölümü - MERKEZLİ */
         header {
             width: 100%;
             max-width: 1200px;
-            text-align: left;
+            text-align: center;
             margin-bottom: 40px;
         }
-
         .logo {
             font-size: 24px;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
-
-        /* Ana İçerik Alanı */
+        /* Ana Konteyner */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -49,37 +46,26 @@
             flex-direction: column;
             gap: 60px;
         }
-
-        /* Minimalist Bölüm Başlıkları */
+        /* Bölüm Başlıkları - GİZLİ */
         .section-title {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            font-weight: 600;
+            display: none;
         }
-
-        /* Slider Alanı */
         .swiper {
             width: 100%;
             height: 500px;
-            background: #f9f9f9;
+            background: #f0f0f0;
         }
-
         .swiper-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
-
-        /* Beyaz ve Kibar Yön Okları */
+        /* Slider Okları */
         .swiper-button-next, .swiper-button-prev {
             color: #ffffff !important;
-            transform: scale(0.6);
+            transform: scale(0.7);
         }
-
-        /* Sinematik Video Oranı (16:9) */
+        /* Video Alanı (16:9) */
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%; 
@@ -87,7 +73,6 @@
             overflow: hidden;
             background: #000000;
         }
-
         .video-wrapper iframe {
             position: absolute;
             top: 0;
@@ -96,89 +81,72 @@
             height: 100%;
             border: 0;
         }
-
-        /* Çağlar Arts Tarzı İletişim Alanı */
+        /* Footer Contact */
         .footer-contact {
             width: 100%;
             text-align: center;
-            padding: 40px 0 20px 0;
+            padding: 60px 0 20px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 30px;
         }
-
-        /* Tamamen küçük harf, incecik çerçeve ve kibar buton duruşu */
+        /* Contact Button */
         .contact-btn {
             display: inline-block;
-            padding: 12px 35px;
-            border: 1px solid #000000;
+            padding: 16px 45px;
+            border: 2px solid #000000;
             color: #000000;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 400;
-            letter-spacing: 1.5px;
-            text-transform: lowercase; /* Küçük harf standardı */
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: lowercase;
             transition: all 0.3s ease;
         }
-
-        /* Butonun üzerine gelindiğinde içi kararır */
+        
         .contact-btn:hover {
             background-color: #000000;
             color: #ffffff;
         }
-
-        /* Mobil Cihazlar İçin Optimizasyon */
-        @media (max-width: 768px) {
-            .swiper {
-                height: 300px;
-            }
-            body {
-                padding: 20px 10px;
-            }
-            .contact-btn {
-                padding: 10px 25px;
-                font-size: 13px;
-            }
-        }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo">KOMAR</div>
     </header>
     
     <div class="container">
+        <!-- Swiper Slider -->
         <div>
-            <h2 class="section-title">Selected Frames</h2>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="image1.jpg" alt="Frame 1"></div>
-                    <div class="swiper-slide"><img src="image2.jpg" alt="Frame 2"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&h=800&fit=crop" alt="Film Set 1"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=1200&h=800&fit=crop" alt="Film Set 2"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=1200&h=800&fit=crop" alt="Film Set 3"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1479749971702-42f568dcc11e?w=1200&h=800&fit=crop" alt="Film Set 4"></div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
         </div>
 
+        <!-- Video -->
         <div>
-            <h2 class="section-title">Video</h2>
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/8hP9D5BINYw" allowfullscreen></iframe>
             </div>
         </div>
 
+        <!-- Footer Contact -->
         <div class="footer-contact">
-            <h2 class="section-title">Get in Touch</h2>
-            <a href="mailto:info@komar.studio" class="contact-btn">contact</a>
+            <a href="mailto:info@komar.studio" class="contact-btn">contact: info@komar.studio</a>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         new Swiper('.swiper', {
-            loop: true, /* Son fotoğraftan sonra otomatik başa dönme aktif */
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
