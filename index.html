@@ -177,14 +177,17 @@
         }
         /* Copyright */
         .copyright {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
+            position: static;
+            width: 100%;
+            text-align: left;
+            padding: 60px 20px;
             font-size: 12px;
             color: #000000;
             opacity: 0.6;
             font-weight: 400;
             letter-spacing: 0.5px;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -251,6 +254,11 @@
         }
         
         new Swiper('.swiper', {
+            effect: 'fade',
+            speed: 1000,
+            fadeEffect: {
+                crossFade: true
+            },
             autoplay: {
                 delay: 8000,
                 disableOnInteraction: false,
