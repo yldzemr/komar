@@ -62,17 +62,17 @@
             margin-top: 0px; 
         }
 
-        /* VİDEO ALANI: KESİLMEYİ İMKANSIZ KILAN 100% 100% ZORLAMA AYARI EKLENDİ */
+        /* VİDEO ALANI: GÖRSELİ BURADAN MERKEZİ OLARAK KİLİTLEDİK VE 100% ORANLADIK */
         .video-wrapper {
             position: relative;
             width: 100%;
             max-width: 1350px;
             aspect-ratio: 16 / 9 !important; /* Kadrajı tam 16:9 olarak kilitler */
-            background-color: #000000;
-            background-image: url('https://img.youtube.com/vi/XjPSGuJskxM/maxresdefault.jpg');
+            background-color: #000000 !important;
+            background-image: url('https://img.youtube.com/vi/XjPSGuJskxM/maxresdefault.jpg') !important;
             background-size: 100% 100% !important; /* Görseli kutuya milimetrik esnetir, kırpmayı bitirir */
-            background-repeat: no-repeat;
-            background-position: center;
+            background-repeat: no-repeat !important;
+            background-position: center !important;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -258,9 +258,7 @@
     
     <div class="container">
         <div>
-            <div class="video-wrapper" 
-                 id="videoContainer"
-                 onclick="playVideo()">
+            <div class="video-wrapper" id="videoContainer" onclick="playVideo()">
                 <div class="play-button"></div>
             </div>
         </div>
@@ -295,7 +293,7 @@
                 </a>
                 <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube">
                     <svg viewBox="0 0 24 24">
-                        <path d="M22.54 6.42c-.26-.92-1.04-1.65-1.94-1.88-1.7-.48-8.6-.48-8.6-.48s-6.9 0-8.6.48c-.9.23-1.68.96-1.94 1.88C1 8.12 1 12 1 12s0 3.88.46 5.58c.26.92 1.04 1.65 1.94 1.88 1.7.48 8.6.48 8.6.48s6.9 0 8.6-.48c.9-.23 1.68-.96 1.94-1.88.46-1.7.46-5.58.46-5.58s0-3.88-.46-5.58z"></path>
+                        <path d="M22.54 6.42c-.26-.92-1.04-1.65-1.94-1.88-1.7-.48-8.6-.48-8.6-.48s-6.9 0-8.6.48c-.9.23-1.68.96-1.94 1.88C1 8.12 1 12 1 12s0 3.88.46 5.58c.26.92 1.04 1.65 1.94 1.88 1.7.48 8.6.48 8.6.48s6.9 0 8.6-.48c.9-.23 1.58-.96 1.94-1.88.46-1.7.46-5.58.46-5.58s0-3.88-.46-5.58z"></path>
                         <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
                     </svg>
                 </a>
