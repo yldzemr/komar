@@ -24,7 +24,7 @@
             padding: 0 20px;
         }
         
-        /* ÜST ALAN (HEADER) */
+        /* ÜST ALAN (HEADER) - MASAÜSTÜ */
         header {
             width: 100%;
             max-width: 1350px;
@@ -42,7 +42,7 @@
             cursor: pointer;
         }
         
-        /* SCOTT FREE AYARINDA GÜÇLÜ OSWALD FONTU */
+        /* GÜÇLÜ OSWALD FONTU */
         .logo-text {
             font-family: 'Oswald', sans-serif !important;
             font-size: 26px !important;      
@@ -61,7 +61,7 @@
             margin-top: 0px; 
         }
 
-        /* VİDEO BLOK KUTUSU: MASAÜSTÜ KORUMASI */
+        /* VİDEO BLOK KUTUSU */
         .video-block {
             width: 100%;
             margin-bottom: 90px !important; 
@@ -235,39 +235,53 @@
             margin-top: 40px;            
         }
 
-        /* ========================================== */
-        /* MOBİL AYARLARINI TAMAMEN DÜZELTEN ALAN    */
-        /* ========================================== */
+        /* ======================================================= */
+        /* MOBİL MATEMATİĞİNİ VE AKIŞINI SIFIRDAN KURAN YENİ ALAN */
+        /* ======================================================= */
         @media (max-width: 768px) {
             body {
                 padding: 0 16px !important;
             }
+            
+            /* Logo alanını sabitledik */
             header {
-                padding: 45px 0 25px 0 !important; /* Üst boşluklar sadeleşti */
+                padding: 30px 0 15px 0 !important;
+                height: 70px !important;
             }
             .logo-text {
                 font-size: 18px !important; 
                 letter-spacing: 0.05em !important;
             }
             
-            /* Saçma sapan dev boşluklar temizlendi. Video ile slider arası ideal netlikte */
+            /* SİHİRLİ DOKUNUŞ 1: İlk ekranı (Logo + Video) telefon yüksekliğine kitledik. */
+            /* Böylece altındaki slider ve contact asla ilk açılışta yukarı sızamaz. */
             .video-block {
-                margin-bottom: 75px !important; 
+                height: calc(100vh - 120px) !important; /* Ekran boyundan logoyu çıkarıp videoya verdik */
+                display: flex;
+                align-items: center; /* Videoyu dikeyde tam ortaladık */
+                margin-bottom: 60px !important; /* Bir sonraki alana geçiş payı */
             }
             
-            /* Slider'dan sonra contact butonunun ilk ekrana girmesini kesin ve kararlı şekilde engelleyen koruma mesafesi */
+            .video-wrapper {
+                aspect-ratio: 16 / 9 !important;
+                width: 100% !important;
+            }
+
+            /* SİHİRLİ DOKUNUŞ 2: Slider bittikten sonra contact alanını tamamen bir alt ekrana fırlatır */
+            /* Kullanıcı parmağını kaydırırken o kaydırma (scroll) derinliğini dibine kadar hisseder */
             .slider-block {
                 margin-bottom: 120px !important; 
+                padding-top: 20px !important;
             }
             
-            .video-wrapper, .swiper {
+            .swiper {
                 aspect-ratio: 16 / 9 !important; 
-                max-width: 100% !important; 
+                width: 100% !important; 
             }
             
-            /* İletişim alanı sade, dengeli ve sıkışıklıktan uzak */
+            /* İletişim alanının kendi iç dengesi */
             .footer-contact {
-                padding: 40px 0 20px 0 !important; 
+                padding: 60px 0 30px 0 !important; 
                 gap: 30px !important;
             }
             .copyright {
