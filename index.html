@@ -58,22 +58,27 @@
             max-width: 1350px;
             display: flex;
             flex-direction: column;
-            gap: 90px; /* Masaüstünde bloklar arası nefes alma boşluğu */
             margin-top: 0px; 
         }
 
-        /* VİDEO ALANI: SÜNMEYİ ENGELLEYEN VE ORANI KİLİTLEYEN YENİ MATEMATİK */
+        /* VİDEO BLOK KUTUSU: ALTTAN SIZMALARI ENGELLEYEN İZOLASYON ALANI */
+        .video-block {
+            width: 100%;
+            /* Ekran yüksekliğine bağlı dinamik alt boşluk. Slider'ı ekranın altına iter, renk sızmasını bitirir */
+            margin-bottom: 12vh !important; 
+        }
+
+        /* VİDEO ALANI: ORANI KORUYAN VE SÜNMEYİ BİTİREN KURAL */
         .video-wrapper {
             position: relative;
             width: 100%;
             max-width: 1350px;
-            /* Ekran yüksekliğine göre genişliği daraltarak 16:9 oranını her ekran tipinde korur */
             max-width: 120vh !important; 
             aspect-ratio: 16 / 9 !important; 
-            margin: 0 auto !important; /* Mac pencerelerinde jilet gibi ortalansın */
+            margin: 0 auto !important;
             background-color: #000000 !important;
             background-image: url('https://img.youtube.com/vi/XjPSGuJskxM/maxresdefault.jpg') !important;
-            background-size: cover !important; /* Sünmeyi tamamen bitiren, kadrajı koruyan kural */
+            background-size: cover !important; 
             background-repeat: no-repeat !important;
             background-position: center !important;
             cursor: pointer;
@@ -116,11 +121,17 @@
             margin-left: 3px;
         }
 
-        /* FOTOĞRAF SLIDERI: VİDEO İLE AYNI ESNEK AKS KİLİTLENDİ */
+        /* FOTOĞRAF BLOK KUTUSU */
+        .slider-block {
+            width: 100%;
+            margin-bottom: 90px; /* Slider ile alt alan arasındaki nefes boşluğu */
+        }
+
+        /* FOTOĞRAF SLIDERI */
         .swiper {
             width: 100%;
             max-width: 1350px !important;      
-            max-width: 120vh !important; /* Videoyla kusursuz simetri ve dikey uyum */
+            max-width: 120vh !important; 
             aspect-ratio: 16 / 9 !important; 
             margin: 0 auto !important;
             background-color: #f9f9f9 !important; 
@@ -156,7 +167,7 @@
         .footer-contact {
             width: 100%;
             text-align: center;
-            padding: 60px 0 40px 0; 
+            padding: 20px 0 40px 0; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -237,15 +248,18 @@
                 font-size: 18px !important; 
                 letter-spacing: 0.05em !important;
             }
-            .container {
-                gap: 50px !important; 
+            .video-block {
+                margin-bottom: 50px !important; /* Mobilde aşırı boşluk olmasın diye sabitlendi */
+            }
+            .slider-block {
+                margin-bottom: 30px !important;
             }
             .video-wrapper, .swiper {
                 aspect-ratio: 16 / 9 !important; 
-                max-width: 100% !important; /* Mobilde tam genişliğe esner */
+                max-width: 100% !important; 
             }
             .footer-contact {
-                padding: 50px 0 20px 0 !important; 
+                padding: 40px 0 20px 0 !important; 
             }
             .copyright {
                 padding: 40px 0 !important;
@@ -265,13 +279,13 @@
     </header>
     
     <div class="container">
-        <div>
+        <div class="video-block">
             <div class="video-wrapper" id="videoContainer" onclick="playVideo()">
                 <div class="play-button"></div>
             </div>
         </div>
 
-        <div>
+        <div class="slider-block">
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=1" alt="Foto 1"></div>
