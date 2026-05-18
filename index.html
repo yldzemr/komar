@@ -6,7 +6,6 @@
     <title>KOMAR</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-        /* SİNEMATİK AKIŞIN GİZLİ SİLAHI: SAYFA KAYDIRMAYI SU GİBİ YAPAR */
         html {
             scroll-behavior: smooth;
         }
@@ -27,7 +26,7 @@
             align-items: center;
             min-height: 100vh;
             padding: 0 20px;
-            -webkit-font-smoothing: antialiased; /* Fontları daha pürüzsüz basar */
+            -webkit-font-smoothing: antialiased;
         }
         
         /* ÜST ALAN (HEADER) */
@@ -48,7 +47,6 @@
             cursor: pointer;
         }
         
-        /* GÜÇLÜ OSWALD FONTU */
         .logo-text {
             font-family: 'Oswald', sans-serif !important;
             font-size: 26px !important;      
@@ -132,14 +130,14 @@
             margin-bottom: 90px; 
         }
 
-        /* FOTOĞRAF SLIDERI */
+        /* FOTOĞRAF SLIDERI - ARKA PLAN SAF BEYAZA EŞİTLENDİ */
         .swiper {
             width: 100%;
             max-width: 1350px !important;      
             max-width: 120vh !important; 
             aspect-ratio: 16 / 9 !important; 
             margin: 0 auto !important;
-            background-color: #f9f9f9 !important; 
+            background-color: #ffffff !important; /* Çiğ gri ton tamamen temizlendi */
         }
         .swiper-slide img {
             width: 100%;
@@ -172,7 +170,7 @@
         .footer-contact {
             width: 100%;
             text-align: center;
-            padding: 40px 0 60px 0; 
+            padding: 20px 0 40px 0; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -242,7 +240,7 @@
         }
 
         /* ======================================================= */
-        /* MOBİLİ SİNEMATİK AKIŞA KAVUŞTURAN ALAN                  */
+        /* GERÇEK MİNİMALİST MOBİL AKIŞ: ETİKETSİZ VE KARARLI     */
         /* ======================================================= */
         @media (max-width: 768px) {
             body {
@@ -256,10 +254,9 @@
                 letter-spacing: 0.05em !important;
             }
             
-            /* Elemanlar arası geçiş sertliğini kıran yumuşak paylar */
+            /* Video kendi doğal oranında ve net bir alt boşlukla ayrılıyor */
             .video-block {
-                height: auto !important; 
-                margin-bottom: 50px !important; 
+                margin-bottom: 80px !important; 
             }
             
             .video-wrapper {
@@ -267,9 +264,9 @@
                 width: 100% !important;
             }
 
-            /* Slider bittikten sonra contact alanına geçişi "nefesli" yapan lüks mesafe */
+            /* Slider altındaki o güvensiz sızma alanı tam 100px piksel bariyeriyle kilitlendi */
             .slider-block {
-                margin-bottom: 160px !important; 
+                margin-bottom: 100px !important; 
             }
             
             .swiper {
@@ -277,10 +274,10 @@
                 width: 100% !important; 
             }
             
-            /* İletişim alanı daha oturaklı ve premium bir boşlukla geliyor */
+            /* İletişim alanının dikeydeki dengesi */
             .footer-contact {
-                padding: 60px 0 40px 0 !important; 
-                gap: 30px !important;
+                padding: 40px 0 20px 0 !important; 
+                gap: 25px !important;
             }
             .copyright {
                 padding: 30px 0 !important;
