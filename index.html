@@ -19,15 +19,17 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 60px 20px;
+            padding: 0 20px; /* Tam ölçülerin sıfıra sıfır oturması için üst/alt padding kaldırıldı */
         }
         
-        /* HEADER ALANINI DE 1350PX STANDARDINA GENİŞLETTİK */
+        /* TAM İSTEDİĞİN 1350x216 ÖLÇÜLERİNDE ÜST ALAN (HEADER) */
         header {
             width: 100%;
             max-width: 1350px;
+            height: 216px !important; /* Dikey yükseklik kilitlendi */
+            display: flex;
+            align-items: center;      /* Logo ve yazıyı 216px içinde dikeyde kusursuz ortalar */
             text-align: left;
-            margin-bottom: 80px;
         }
         
         .brand-link {
@@ -57,17 +59,17 @@
         
         .container {
             width: 100%;
-            max-width: 1350px; /* Tüm site gövdesi 1350px çizgisine oturdu */
+            max-width: 1350px;
             display: flex;
             flex-direction: column;
             gap: 80px;
         }
 
-        /* TAM İSTEDİĞİN 1350x541 MASAÜSTÜ ÖLÇEĞİ */
+        /* 1350x541 FOTOĞRAF SLIDER ALANI */
         .swiper {
             width: 100%;
-            max-width: 1350px !important;      /* Masaüstünde tam sınır */
-            aspect-ratio: 1350 / 541 !important; /* Altın oran kilitlendi */
+            max-width: 1350px !important;      
+            aspect-ratio: 1350 / 541 !important; 
             margin: 0 auto !important;
             background: #f5f5f5;
         }
@@ -201,27 +203,33 @@
             width: 32px;
             height: 32px;
         }
+
+        /* İNCE ÇİZGİ İLE EN ALT ARASINDAKİ 1350x167 BÖLGE (FOOTER / COPYRIGHT) */
         .copyright {
-            position: static;
             width: 100%;
+            max-width: 1350px;          /* Slider genişliğine eşitlendi */
+            height: 167px !important;    /* Çizgiden tabana net yükseklik */
+            border-top: 1px solid #f0f0f0; /* Bahsettiğin o ince gri çizgi */
+            display: flex;
+            align-items: center;         /* Yazıyı 167px içinde dikeyde ortalar */
             text-align: left;
-            padding: 60px 20px;
             font-size: 12px;
             color: #000000;
             opacity: 0.6;
             font-weight: 400;
             letter-spacing: 0.5px;
-            border-top: 1px solid #f0f0f0;
-            margin-top: 40px;
+            margin-top: 40px;            /* Video alanıyla çizgi arasındaki mesafe */
         }
 
-        /* MASAÜSTÜ İLE TAM BÜTÜNLÜK SAĞLAYAN MOBİL KURALI */
+        /* MASAÜSTÜ İLE TAM BÜTÜNLÜK SAĞLAYAN MOBİL KORUMA */
         @media (max-width: 768px) {
             body {
-                padding: 40px 16px !important;
+                padding: 0 16px !important;
             }
+            /* Mobilde kutu yüksekliklerini esneterek taşmaları önlüyoruz */
             header {
-                margin-bottom: 40px !important;
+                height: auto !important;
+                padding: 40px 0 !important;
             }
             .logo-icon {
                 height: 36px !important; 
@@ -232,7 +240,6 @@
                 font-size: 15px !important; 
                 letter-spacing: -0.01em !important;
             }
-            /* Mobilde de tam oran (1350/541) korunarak kusursuzca küçülür */
             .swiper {
                 aspect-ratio: 1350 / 541 !important; 
             }
@@ -240,7 +247,8 @@
                 gap: 40px !important;
             }
             .copyright {
-                padding: 40px 16px !important;
+                height: auto !important;
+                padding: 40px 0 !important;
                 margin-top: 20px !important;
             }
         }
