@@ -30,27 +30,29 @@
             margin-bottom: 80px;
             display: flex;
             align-items: center;
-            gap: 0px; /* Boşlukları içten kapatacağımız için sıfırladık */
+            gap: 0px; 
         }
         
-        /* Mevcut logonun boşluklarını bastırmak ve Çağlar Arts boyutuna getirmek için zorlama hilesi */
+        /* Logonun basıklaşmasını %100 engelleyen kesin kodlar */
         .logo-icon {
-    height: 48px;         /* Logonun dikey yüksekliğini sabitledik */
-    width: 48px;          /* Genişliği de eşitledik ki tam 1:1 kare kalsın, basıklaşmasın */
-    aspect-ratio: 1 / 1;  /* Oranının asla bozulmamasını garanti altına alıyoruz */
-    flex-shrink: 0;
-    margin-right: 12px;   /* Çağlar Arts gibi yazı ile logo arasındaki ideal boşluk */
-}
+            height: 48px !important;       
+            width: 48px !important;        
+            aspect-ratio: 1 / 1 !important; 
+            flex-shrink: 0 !important;
+            margin-right: 15px !important;  
+            margin-left: 0 !important;
+            margin-top: 0 !important;
+        }
         
         /* Çağlar Arts Gibi Yan Yana Tek Satır Güçlü Yazı */
         .logo {
             font-family: 'Inter', sans-serif !important;
             font-size: 18px;
             font-weight: 700 !important;
-            letter-spacing: -0.02em; /* Premium daraltma */
+            letter-spacing: -0.02em; 
             text-transform: uppercase;
             color: #000000;
-            white-space: nowrap; /* Yazının asla alt satıra kırılmamasını sağlar */
+            white-space: nowrap; 
         }
         
         .container {
