@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KOMAR</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -21,7 +24,7 @@
             min-height: 100vh;
             padding: 60px 20px;
         }
-        /* Üst Logo Bölümü - Sol Üste */
+        /* Üst Logo Bölümü - Sol Üste Hizalı */
         header {
             width: 100%;
             max-width: 1200px;
@@ -29,17 +32,18 @@
             margin-bottom: 80px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px; /* Logo ile yazı arasındaki ideal boşluk */
         }
         .logo-icon {
-            width: 40px;
-            height: 40px;
+            height: 50px; /* Çiçek detaylarının net görünmesi ve yazıyla oranlanması için */
+            width: auto;  /* En boy oranını korur, logoyu ezmez */
             flex-shrink: 0;
         }
         .logo {
+            font-family: 'Inter', sans-serif !important;
             font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-weight: 700 !important;
+            letter-spacing: -0.02em; /* Premium harf daraltması */
             text-transform: uppercase;
             color: #000000;
             line-height: 1.2;
@@ -199,26 +203,11 @@
             border-top: 1px solid #f0f0f0;
             margin-top: 40px;
         }
-   .logo {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.02em;
-}
     </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M50 20 Q60 25 65 35 Q70 45 65 55 Q60 65 50 70 Q40 65 35 55 Q30 45 35 35 Q40 25 50 20" 
-                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M50 30 Q55 32 58 38 Q60 45 58 52 Q55 58 50 60" 
-                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <path d="M38 45 L45 45 M55 45 L62 45" 
-                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-        </svg>
+        <img src="logo.png" class="logo-icon" alt="KOMAR Logo">
         <div class="logo">KOMAR<br>ENTERTAINMENT</div>
     </header>
     
@@ -229,76 +218,4 @@
                     <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=1" alt="Foto 1"></div>
                     <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=2" alt="Foto 2"></div>
                     <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=3" alt="Foto 3"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=4" alt="Foto 4"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=5" alt="Foto 5"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=6" alt="Foto 6"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=7" alt="Foto 7"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=8" alt="Foto 8"></div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-
-        <div>
-            <div class="video-wrapper" 
-                 id="videoContainer"
-                 style="background-image: url('https://img.youtube.com/vi/XjPSGuJskxM/maxresdefault.jpg');"
-                 onclick="playVideo()">
-                <div class="play-button"></div>
-            </div>
-        </div>
-
-        <div class="footer-contact">
-            <a href="mailto:info@komar.studio" class="contact-btn">contact: info@komar.studio</a>
-            <div class="social-links">
-                <a href="https://instagram.com" target="_blank" class="social-link" title="Instagram">
-                    <svg viewBox="0 0 24 24">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
-                        <circle cx="18" cy="6" r="1"></circle>
-                    </svg>
-                </a>
-                <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M22.54 6.42c-.26-.92-1.04-1.65-1.94-1.88-1.7-.48-8.6-.48-8.6-.48s-6.9 0-8.6.48c-.9.23-1.68.96-1.94 1.88C1 8.12 1 12 1 12s0 3.88.46 5.58c.26.92 1.04 1.65 1.94 1.88 1.7.48 8.6.48 8.6.48s6.9 0 8.6-.48c.9-.23 1.68-.96 1.94-1.88.46-1.7.46-5.58.46-5.58s0-3.88-.46-5.58z"></path>
-                        <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="copyright">© 2026 All rights reserved.</div>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        function playVideo() {
-            document.getElementById('videoContainer').innerHTML = 
-            '<iframe src="https://www.youtube.com/embed/XjPSGuJskxM?autoplay=1&mute=1" allowfullscreen></iframe>';
-        }
-        
-        new Swiper('.swiper', {
-            effect: 'fade',
-            speed: 1000,
-            fadeEffect: {
-                crossFade: true
-            },
-            autoplay: {
-                delay: 8000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
-    </script>
-</body>
-</html>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1200/800?random=4"
