@@ -61,11 +61,10 @@
             margin-top: 0px; 
         }
 
-        /* VİDEO BLOK KUTUSU: ALTTAN SIZMALARI ENGELLEYEN İZOLASYON ALANI */
+        /* VİDEO BLOK KUTUSU: MASAUZUNDE ALTTAN SIZMALARI KESİN BİTİREN GENİŞ İZOLASYON */
         .video-block {
             width: 100%;
-            /* Ekran yüksekliğine bağlı dinamik alt boşluk. Slider'ı ekranın altına iter, renk sızmasını bitirir */
-            margin-bottom: 12vh !important; 
+            margin-bottom: 18vh !important; /* Mesafe daha da artırılarak alttaki slider tamamen ekran dışına itildi */
         }
 
         /* VİDEO ALANI: ORANI KORUYAN VE SÜNMEYİ BİTİREN KURAL */
@@ -249,17 +248,17 @@
                 letter-spacing: 0.05em !important;
             }
             .video-block {
-                margin-bottom: 50px !important; /* Mobilde aşırı boşluk olmasın diye sabitlendi */
+                margin-bottom: 80px !important; /* Mobilde video ve slider arası 80px'e çıkarılarak contact aşağı itildi */
             }
             .slider-block {
-                margin-bottom: 30px !important;
+                margin-bottom: 40px !important;
             }
             .video-wrapper, .swiper {
                 aspect-ratio: 16 / 9 !important; 
                 max-width: 100% !important; 
             }
             .footer-contact {
-                padding: 40px 0 20px 0 !important; 
+                padding: 60px 0 30px 0 !important; /* Kaydırma sonrası contact alanının nefes payı artırıldı */
             }
             .copyright {
                 padding: 40px 0 !important;
