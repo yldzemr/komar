@@ -24,7 +24,7 @@
         
         header {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1000px; /* Genel yapıyı da slider standardına çektik */
             text-align: left;
             margin-bottom: 80px;
         }
@@ -56,23 +56,24 @@
         
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1000px; /* Tüm içerik alanını 1000px sınırına eşitledik */
             display: flex;
             flex-direction: column;
             gap: 80px;
         }
 
-        /* ÇAĞLAR ARTS TARZI ULTRA SİNEMATİK (CINEMASCOPE) SLIDER BOYUTU */
+        /* REFERANS SİTEDEKİ BİREBİR 1000x541 ÖLÇEĞİ */
         .swiper {
             width: 100%;
-            aspect-ratio: 2.39 / 1 !important; /* Standart TV değil, geniş perde sinema formatı */
-            max-height: 400px !important;      /* Masaüstünde dikine devasa durmasını engelleyen basık sınır */
+            max-width: 1000px !important;      /* Maksimum genişlik tam 1000px */
+            aspect-ratio: 1000 / 541 !important; /* Yükseklik tam bu oranda 541px'e oturur */
+            margin: 0 auto !important;
             background: #f5f5f5;
         }
         .swiper-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Fotoğrafları sinematik kadraja göre kusursuz kırpar */
+            object-fit: cover; 
         }
 
         .swiper-button-next, .swiper-button-prev {
@@ -213,7 +214,7 @@
             margin-top: 40px;
         }
 
-        /* MOBİL KORUMA AYARLARI */
+        /* MOBİL UYUM */
         @media (max-width: 768px) {
             body {
                 padding: 40px 16px !important;
@@ -230,10 +231,9 @@
                 font-size: 15px !important; 
                 letter-spacing: -0.01em !important;
             }
-            /* Mobilde slider'ın çok ince kalmaması için ideal oran */
+            /* Mobilde de 1000/541 oranı kusursuz daralır, ekstra müdahaleye gerek kalmaz */
             .swiper {
-                aspect-ratio: 16 / 9 !important; 
-                max-height: 280px !important;
+                aspect-ratio: 1000 / 541 !important; 
             }
             .container {
                 gap: 40px !important;
@@ -260,14 +260,14 @@
         <div>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/502?random=1" alt="Foto 1"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/502?random=2" alt="Foto 2"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/502?random=3" alt="Foto 3"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/502?random=4" alt="Foto 4"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/502?random=5" alt="Foto 5"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/502?random=6" alt="Foto 6"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/502?random=7" alt="Foto 7"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1200/502?random=8" alt="Foto 8"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=1" alt="Foto 1"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=2" alt="Foto 2"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=3" alt="Foto 3"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=4" alt="Foto 4"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=5" alt="Foto 5"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=6" alt="Foto 6"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=7" alt="Foto 7"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=8" alt="Foto 8"></div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
