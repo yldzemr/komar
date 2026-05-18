@@ -22,9 +22,10 @@
             padding: 60px 20px;
         }
         
+        /* HEADER ALANINI DE 1350PX STANDARDINA GENİŞLETTİK */
         header {
             width: 100%;
-            max-width: 1000px; /* Genel yapıyı da slider standardına çektik */
+            max-width: 1350px;
             text-align: left;
             margin-bottom: 80px;
         }
@@ -56,17 +57,17 @@
         
         .container {
             width: 100%;
-            max-width: 1000px; /* Tüm içerik alanını 1000px sınırına eşitledik */
+            max-width: 1350px; /* Tüm site gövdesi 1350px çizgisine oturdu */
             display: flex;
             flex-direction: column;
             gap: 80px;
         }
 
-        /* REFERANS SİTEDEKİ BİREBİR 1000x541 ÖLÇEĞİ */
+        /* TAM İSTEDİĞİN 1350x541 MASAÜSTÜ ÖLÇEĞİ */
         .swiper {
             width: 100%;
-            max-width: 1000px !important;      /* Maksimum genişlik tam 1000px */
-            aspect-ratio: 1000 / 541 !important; /* Yükseklik tam bu oranda 541px'e oturur */
+            max-width: 1350px !important;      /* Masaüstünde tam sınır */
+            aspect-ratio: 1350 / 541 !important; /* Altın oran kilitlendi */
             margin: 0 auto !important;
             background: #f5f5f5;
         }
@@ -214,7 +215,7 @@
             margin-top: 40px;
         }
 
-        /* MOBİL UYUM */
+        /* MASAÜSTÜ İLE TAM BÜTÜNLÜK SAĞLAYAN MOBİL KURALI */
         @media (max-width: 768px) {
             body {
                 padding: 40px 16px !important;
@@ -231,9 +232,9 @@
                 font-size: 15px !important; 
                 letter-spacing: -0.01em !important;
             }
-            /* Mobilde de 1000/541 oranı kusursuz daralır, ekstra müdahaleye gerek kalmaz */
+            /* Mobilde de tam oran (1350/541) korunarak kusursuzca küçülür */
             .swiper {
-                aspect-ratio: 1000 / 541 !important; 
+                aspect-ratio: 1350 / 541 !important; 
             }
             .container {
                 gap: 40px !important;
@@ -260,14 +261,14 @@
         <div>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=1" alt="Foto 1"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=2" alt="Foto 2"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=3" alt="Foto 3"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=4" alt="Foto 4"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=5" alt="Foto 5"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=6" alt="Foto 6"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=7" alt="Foto 7"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1000/541?random=8" alt="Foto 8"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=1" alt="Foto 1"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=2" alt="Foto 2"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=3" alt="Foto 3"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=4" alt="Foto 4"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=5" alt="Foto 5"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=6" alt="Foto 6"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=7" alt="Foto 7"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=8" alt="Foto 8"></div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
