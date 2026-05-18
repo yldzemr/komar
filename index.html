@@ -58,19 +58,20 @@
             max-width: 1350px;
             display: flex;
             flex-direction: column;
-            gap: 80px; 
+            gap: 90px; /* Blokların arası masaüstünde nefes alsın diye 90px yapıldı */
             margin-top: 0px; 
         }
 
-        /* VİDEO ALANI: GÖRSELİ BURADAN MERKEZİ OLARAK KİLİTLEDİK VE 100% ORANLADIK */
+        /* VİDEO ALANI: MAC DOSTU MAKSİMUM YÜKSEKLİK SINIRI ENTEGRE EDİLDİ */
         .video-wrapper {
             position: relative;
             width: 100%;
             max-width: 1350px;
-            aspect-ratio: 16 / 9 !important; /* Kadrajı tam 16:9 olarak kilitler */
+            aspect-ratio: 16 / 9 !important; 
+            max-height: 68vh !important; /* Mac'te Dock açıkken ekrandan taşmayı engelleyen akıllı sınır */
             background-color: #000000 !important;
             background-image: url('https://img.youtube.com/vi/XjPSGuJskxM/maxresdefault.jpg') !important;
-            background-size: 100% 100% !important; /* Görseli kutuya milimetrik esnetir, kırpmayı bitirir */
+            background-size: 100% 100% !important; 
             background-repeat: no-repeat !important;
             background-position: center !important;
             cursor: pointer;
@@ -113,11 +114,12 @@
             margin-left: 3px;
         }
 
-        /* FOTOĞRAF SLIDERI (MİKRO AYARLAR EKSİKSİZ KORUNDU) */
+        /* FOTOĞRAF SLIDERI: MAC DOSTU MAKSİMUM YÜKSEKLİK BURAYA DA EKLENDİ */
         .swiper {
             width: 100%;
             max-width: 1350px !important;      
-            aspect-ratio: 16 / 9 !important; /* FX30 Kadraj Koruyucu */
+            aspect-ratio: 16 / 9 !important; 
+            max-height: 68vh !important; /* Fotoğrafların Mac ekranından taşmasını önler */
             margin: 0 auto !important;
             background-color: #f9f9f9 !important; 
         }
@@ -152,11 +154,11 @@
         .footer-contact {
             width: 100%;
             text-align: center;
-            padding: 40px 0;
+            padding: 60px 0 40px 0; /* Boşluk dengesi ayarlandı */
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            gap: 35px;
         }
         .contact-btn {
             display: inline-block;
@@ -221,23 +223,27 @@
             margin-top: 40px;            
         }
 
-        /* RESPONSIVE MOBİL KORUMA ALANI */
+        /* RESPONSIVE MOBİL KORUMA VE SCROLL DENGE ALANI */
         @media (max-width: 768px) {
             body {
                 padding: 0 16px !important;
             }
             header {
-                padding: 40px 0 20px 0 !important;
+                padding: 50px 0 30px 0 !important;
             }
             .logo-text {
                 font-size: 18px !important; 
                 letter-spacing: 0.05em !important;
             }
             .container {
-                gap: 40px !important;
+                gap: 50px !important; /* Mobilde video ve slider arası tatlıca açıldı */
             }
             .video-wrapper, .swiper {
                 aspect-ratio: 16 / 9 !important; 
+                max-height: none !important; /* Mobilde dikey sınır devredışı bırakılır, normal akış korunur */
+            }
+            .footer-contact {
+                padding: 50px 0 20px 0 !important; /* Sosyal medyayı hafif aşağı iten scroll dengesi */
             }
             .copyright {
                 padding: 40px 0 !important;
@@ -293,7 +299,7 @@
                 </a>
                 <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube">
                     <svg viewBox="0 0 24 24">
-                        <path d="M22.54 6.42c-.26-.92-1.04-1.65-1.94-1.88-1.7-.48-8.6-.48-8.6-.48s-6.9 0-8.6.48c-.9.23-1.68.96-1.94 1.88C1 8.12 1 12 1 12s0 3.88.46 5.58c.26.92 1.04 1.65 1.94 1.88 1.7.48 8.6.48 8.6.48s6.9 0 8.6-.48c.9-.23 1.58-.96 1.94-1.88.46-1.7.46-5.58.46-5.58s0-3.88-.46-5.58z"></path>
+                        <path d="M22.54 6.42c-.26-.92-1.04-1.65-1.94-1.88-1.7-.48-8.6-.48-8.6-.48s-6.9 0-8.6.48c-.9.23-1.68.96-1.94 1.88C1 8.12 1 12 1 12s0 3.88.46 5.58c.26.92 1.04 1.65 1.94 1.88 1.7.48 8.6.48 8.6.48s6.9 0 8.6-.48c.9-.23 1.68-.96 1.94-1.88.46-1.7.46-5.58.46-5.58s0-3.88-.46-5.58z"></path>
                         <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
                     </svg>
                 </a>
