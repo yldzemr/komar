@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KOMAR</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -24,7 +21,8 @@
             min-height: 100vh;
             padding: 60px 20px;
         }
-        /* Üst Logo Bölümü - Sol Üste Hizalı */
+        
+        /* ÇAĞLAR ARTS TARZI YEKPARE LOGO ALANI */
         header {
             width: 100%;
             max-width: 1200px;
@@ -32,22 +30,30 @@
             margin-bottom: 80px;
             display: flex;
             align-items: center;
-            gap: 20px; /* Çiçek ile yazı arasındaki ideal boşluk */
+            gap: 0px; /* Boşlukları içten kapatacağımız için sıfırladık */
         }
+        
+        /* Mevcut logonun boşluklarını bastırmak ve Çağlar Arts boyutuna getirmek için zorlama hilesi */
         .logo-icon {
-            height: 50px; /* Çiçeğin net görünmesi ve yazıyla oranlanması için */
-            width: auto;  /* En boy oranını korur, çiçeği ezmez */
+            width: 110px;        /* Çiçeğin net görünmesi için kutuyu çok büyüttük */
+            height: 110px;
             flex-shrink: 0;
+            margin-left: -35px;  /* Solundaki görünmez boşluğu sıfırlamak için ekranın dışına ittiriyoruz */
+            margin-right: -30px; /* Sağındaki devasa boşluğu yok edip yazıyı logoya kenetliyoruz */
+            margin-top: -5px;
         }
+        
+        /* Çağlar Arts Gibi Yan Yana Tek Satır Güçlü Yazı */
         .logo {
             font-family: 'Inter', sans-serif !important;
             font-size: 18px;
             font-weight: 700 !important;
-            letter-spacing: -0.02em; /* İstediğin premium harf daraltması */
+            letter-spacing: -0.02em; /* Premium daraltma */
             text-transform: uppercase;
             color: #000000;
-            line-height: 1.2;
+            white-space: nowrap; /* Yazının asla alt satıra kırılmamasını sağlar */
         }
+        
         .container {
             width: 100%;
             max-width: 1200px;
@@ -157,7 +163,6 @@
             background-color: #000000;
             color: #ffffff;
         }
-        /* Sosyal Medya Linkleri */
         .social-links {
             display: flex;
             gap: 25px;
@@ -189,7 +194,6 @@
             width: 32px;
             height: 32px;
         }
-        /* Telif Hakkı */
         .copyright {
             position: static;
             width: 100%;
@@ -204,11 +208,21 @@
             margin-top: 40px;
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <img src="logo.png" class="logo-icon" alt="KOMAR Logo">
-        <div class="logo">KOMAR<br>ENTERTAINMENT</div>
+        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 20 Q60 25 65 35 Q70 45 65 55 Q60 65 50 70 Q40 65 35 55 Q30 45 35 35 Q40 25 50 20" 
+                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M50 30 Q55 32 58 38 Q60 45 58 52 Q55 58 50 60" 
+                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M38 45 L45 45 M55 45 L62 45" 
+                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="logo">KOMAR ENTERTAINMENT</div>
     </header>
     
     <div class="container">
