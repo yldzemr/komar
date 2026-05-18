@@ -58,22 +58,22 @@
             max-width: 1350px;
             display: flex;
             flex-direction: column;
-            gap: 90px; /* Blokların arası masaüstünde nefes alsın */
+            gap: 90px; /* Masaüstünde bloklar arası nefes alma boşluğu */
             margin-top: 0px; 
         }
 
-        /* VİDEO ALANI: SÜNMEYİ VE KAYMAYI ÖSLEYEN AKILLI ORAN KORUYUCU */
+        /* VİDEO ALANI: SÜNMEYİ ENGELLEYEN VE ORANI KİLİTLEYEN YENİ MATEMATİK */
         .video-wrapper {
             position: relative;
             width: 100%;
             max-width: 1350px;
+            /* Ekran yüksekliğine göre genişliği daraltarak 16:9 oranını her ekran tipinde korur */
+            max-width: 120vh !important; 
             aspect-ratio: 16 / 9 !important; 
-            /* Sünmeyi engellemek için dikey yüksekliği değil, genişliği ekran yüksekliğine (vmax) göre oranladık */
-            max-width: 115vh !important; 
-            margin: 0 auto !important; /* Ortada jilet gibi hizalansın */
+            margin: 0 auto !important; /* Mac pencerelerinde jilet gibi ortalansın */
             background-color: #000000 !important;
             background-image: url('https://img.youtube.com/vi/XjPSGuJskxM/maxresdefault.jpg') !important;
-            background-size: cover !important; /* Görselin sünmesini kesin olarak bitiren kural */
+            background-size: cover !important; /* Sünmeyi tamamen bitiren, kadrajı koruyan kural */
             background-repeat: no-repeat !important;
             background-position: center !important;
             cursor: pointer;
@@ -116,12 +116,12 @@
             margin-left: 3px;
         }
 
-        /* FOTOĞRAF SLIDERI: VİDEO İLE MİLİMETRİK AYNI AKS KORUNDU */
+        /* FOTOĞRAF SLIDERI: VİDEO İLE AYNI ESNEK AKS KİLİTLENDİ */
         .swiper {
             width: 100%;
             max-width: 1350px !important;      
+            max-width: 120vh !important; /* Videoyla kusursuz simetri ve dikey uyum */
             aspect-ratio: 16 / 9 !important; 
-            max-width: 115vh !important; /* Videoyla kusursuz dikey paralellik sağlandı */
             margin: 0 auto !important;
             background-color: #f9f9f9 !important; 
         }
@@ -225,7 +225,7 @@
             margin-top: 40px;            
         }
 
-        /* RESPONSIVE MOBİL KORUMA VE SCROLL DENGE ALANI */
+        /* RESPONSIVE MOBİL KORUMA ALANI */
         @media (max-width: 768px) {
             body {
                 padding: 0 16px !important;
@@ -242,7 +242,7 @@
             }
             .video-wrapper, .swiper {
                 aspect-ratio: 16 / 9 !important; 
-                max-width: 100% !important; /* Mobilde tam genişliğe geri döner */
+                max-width: 100% !important; /* Mobilde tam genişliğe esner */
             }
             .footer-contact {
                 padding: 50px 0 20px 0 !important; 
