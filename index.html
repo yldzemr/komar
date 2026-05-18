@@ -12,11 +12,11 @@
             box-sizing: border-box;
         }
         
-        /* SİTENİN ANA ARKA PLANI: Seçtiğin o elite stüdyo grisi */
+        /* SİTENİN ANA ARKA PLANI: Çağlar Arts ezberini bozan o elite stüdyo grisi */
         body {
             background-color: #f4f4f6;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #111111; /* Yazılarda gözü yormayan sinematik antrasit */
+            color: #111111;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -24,17 +24,16 @@
             padding: 0 20px;
         }
         
-        /* İKİYE BÖLÜNME HİLESİ: Üst alan bembeyaz bir gökyüzü gibi ferah */
+        /* ÜST ALAN: Tamamen saf beyaz, ferah gökyüzü bloğu */
         header {
-            width: 100vw; /* Ekranı soldan sağa tamamen kaplar */
-            background-color: #ffffff; /* Saf beyaz üst blok */
+            width: 100vw; 
+            background-color: #ffffff; 
             padding: 85px 0; 
             display: flex;
-            justify-content: center; /* İçindeki içeriği ortalar */
+            justify-content: center; 
             align-items: center;
         }
         
-        /* Header içindeki 1350px hizalama aksı */
         .header-inner {
             width: 100%;
             max-width: 1350px;
@@ -50,61 +49,27 @@
             cursor: pointer;
         }
         
+        /* FONT DEĞİŞTİ: Çağlar Arts'tan tamamen kopan, sinematik ve güçlü OSWALD karakteri */
         .logo-text {
-            font-family: 'Inter', sans-serif !important;
-            font-size: 24px !important;      
+            font-family: 'Oswald', sans-serif !important;
+            font-size: 26px !important;      
             font-weight: 700 !important;
-            letter-spacing: -0.03em !important; 
+            letter-spacing: 0.08em !important; /* Afiş estetiği veren geniş harf aralığı */
             text-transform: uppercase;
             white-space: nowrap; 
         }
         
-        /* GRİ FONUN ÜZERİNDE AKACAK ANA GÖVDE AXIS'I */
+        /* ANA İÇERİK GÖVDESİ */
         .container {
             width: 100%;
             max-width: 1350px;
             display: flex;
             flex-direction: column;
             gap: 80px; 
-            margin-top: 80px; /* Beyaz bloktan sonra başlayan sinematik nefes boşluğu */
+            margin-top: 80px; /* Beyaz bloktan sonra başlayan nefes boşluğu */
         }
 
-        /* 16:9 ESNEK SLIDER */
-        .swiper {
-            width: 100%;
-            max-width: 1350px !important;      
-            aspect-ratio: 16 / 9 !important; /* FX30 kadraj koruması */
-            margin: 0 auto !important;
-            background-color: #e8e8ec !important; /* Gri fon üzerinde preloader olarak bir ton koyusu */
-        }
-        .swiper-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-        }
-
-        .swiper-button-next, .swiper-button-prev {
-            color: #ffffff !important;
-            transform: scale(0.7);
-        }
-        .swiper-pagination {
-            bottom: 20px !important;
-        }
-        .swiper-pagination-bullet {
-            background-color: #ffffff !important;
-            opacity: 0.6;
-            width: 10px !important;
-            height: 10px !important;
-            transition: all 0.3s ease;
-        }
-        .swiper-pagination-bullet-active {
-            background-color: #ffffff !important;
-            opacity: 1;
-            width: 12px !important;
-            height: 12px !important;
-        }
-        
-        /* VİDEO ALANI */
+        /* YENİ ŞABLON: VİDEO ARTIK EN TEPEDE, İLK SIRADA BİZİ KARŞILIYOR */
         .video-wrapper {
             position: relative;
             width: 100%;
@@ -150,7 +115,43 @@
             border-bottom: 10px solid transparent;
             margin-left: 3px;
         }
+
+        /* YENİ ŞABLON: FOTOĞRAF SLIDERI VİDEONUN ALTINA İNDİ (KADRAJ ASLA BOZULMAZ) */
+        .swiper {
+            width: 100%;
+            max-width: 1350px !important;      
+            aspect-ratio: 16 / 9 !important; /* FX30 16:9 Formatı */
+            margin: 0 auto !important;
+            background-color: #e8e8ec !important; 
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: #ffffff !important;
+            transform: scale(0.7);
+        }
+        .swiper-pagination {
+            bottom: 20px !important;
+        }
+        .swiper-pagination-bullet {
+            background-color: #ffffff !important;
+            opacity: 0.6;
+            width: 10px !important;
+            height: 10px !important;
+            transition: all 0.3s ease;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #ffffff !important;
+            opacity: 1;
+            width: 12px !important;
+            height: 12px !important;
+        }
         
+        /* SEVDİĞİN VE AYNEN KORUNAN İLETİŞİM ALANI */
         .footer-contact {
             width: 100%;
             text-align: center;
@@ -208,11 +209,11 @@
             height: 32px;
         }
 
-        /* GRİ FONLA UYUMLU, ASİL KAPANIŞ ÇİZGİSİ VE METNİ */
+        /* SEVDİĞİN VE AYNEN KORUNAN İNCE ÇİZGİLİ COPYRIGHT ALANI */
         .copyright {
             width: 100%;
             max-width: 1350px;          
-            border-top: 1px solid #e1e1e6; /* Yeni gri fona uyumlu hafif koyu çizgi */
+            border-top: 1px solid #e1e1e6; 
             padding: 75px 0;               
             text-align: left;
             font-size: 12px;
@@ -226,7 +227,7 @@
         /* RESPONSIVE MOBİL KORUMA */
         @media (max-width: 768px) {
             body {
-                padding: 0; /* Mobilde taşmayı önlemek için sıfırlandı */
+                padding: 0;
             }
             header {
                 padding: 40px 0 !important;
@@ -235,8 +236,8 @@
                 padding: 0 16px !important;
             }
             .logo-text {
-                font-size: 16px !important; 
-                letter-spacing: -0.01em !important;
+                font-size: 18px !important; 
+                letter-spacing: 0.05em !important;
             }
             .container {
                 gap: 40px !important;
@@ -254,7 +255,7 @@
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -266,6 +267,15 @@
     </header>
     
     <div class="container">
+        <div>
+            <div class="video-wrapper" 
+                 id="videoContainer"
+                 style="background-image: url('https://img.youtube.com/vi/XjPSGuJskxM/maxresdefault.jpg');"
+                 onclick="playVideo()">
+                <div class="play-button"></div>
+            </div>
+        </div>
+
         <div>
             <div class="swiper">
                 <div class="swiper-wrapper">
@@ -281,15 +291,6 @@
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
-            </div>
-        </div>
-
-        <div>
-            <div class="video-wrapper" 
-                 id="videoContainer"
-                 style="background-image: url('https://img.youtube.com/vi/XjPSGuJskxM/maxresdefault.jpg');"
-                 onclick="playVideo()">
-                <div class="play-button"></div>
             </div>
         </div>
 
