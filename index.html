@@ -35,13 +35,12 @@
         
         /* Mevcut logonun boşluklarını bastırmak ve Çağlar Arts boyutuna getirmek için zorlama hilesi */
         .logo-icon {
-            width: 110px;        /* Çiçeğin net görünmesi için kutuyu çok büyüttük */
-            height: 110px;
-            flex-shrink: 0;
-            margin-left: -35px;  /* Solundaki görünmez boşluğu sıfırlamak için ekranın dışına ittiriyoruz */
-            margin-right: -30px; /* Sağındaki devasa boşluğu yok edip yazıyı logoya kenetliyoruz */
-            margin-top: -5px;
-        }
+    height: 48px;         /* Logonun dikey yüksekliğini sabitledik */
+    width: 48px;          /* Genişliği de eşitledik ki tam 1:1 kare kalsın, basıklaşmasın */
+    aspect-ratio: 1 / 1;  /* Oranının asla bozulmamasını garanti altına alıyoruz */
+    flex-shrink: 0;
+    margin-right: 12px;   /* Çağlar Arts gibi yazı ile logo arasındaki ideal boşluk */
+}
         
         /* Çağlar Arts Gibi Yan Yana Tek Satır Güçlü Yazı */
         .logo {
