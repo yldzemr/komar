@@ -28,7 +28,7 @@
         header {
             width: 100%;
             max-width: 1350px;
-            padding: 85px 0 45px 0; /* Alttaki video sıkışmasın diye alt padding biraz esnetildi */
+            padding: 85px 0 45px 0; 
             display: flex;
             align-items: center;
             text-align: left;
@@ -59,17 +59,18 @@
             display: flex;
             flex-direction: column;
             gap: 80px; 
-            margin-top: 0px; /* Üst üste binme veya boşluk hatası sıfırlandı */
+            margin-top: 0px; 
         }
 
-        /* VİDEO ALANI: İŞTE O KESİLMEYİ ENGELLEYEN KUSURSUZ 16:9 KORUMASI */
+        /* VİDEO ALANI: KESİLMEYİ İMKANSIZ KILAN 100% 100% ZORLAMA AYARI EKLENDİ */
         .video-wrapper {
             position: relative;
             width: 100%;
             max-width: 1350px;
             aspect-ratio: 16 / 9 !important; /* Kadrajı tam 16:9 olarak kilitler */
-            background: #000000;
-            background-size: contain; /* Görselin asla kırpılmamasını sağlar */
+            background-color: #000000;
+            background-image: url('https://img.youtube.com/vi/XjPSGuJskxM/maxresdefault.jpg');
+            background-size: 100% 100% !important; /* Görseli kutuya milimetrik esnetir, kırpmayı bitirir */
             background-repeat: no-repeat;
             background-position: center;
             cursor: pointer;
@@ -147,7 +148,7 @@
             height: 12px !important;
         }
         
-        /* SEVDİĞİN VE ASLA BOZULMAYAN İLETİŞİM ALANI */
+        /* İLETİŞİM ALANI */
         .footer-contact {
             width: 100%;
             text-align: center;
@@ -205,7 +206,7 @@
             height: 32px;
         }
 
-        /* SEVDİĞİN VE ASLA BOZULMAYAN COPYRIGHT AYARI */
+        /* COPYRIGHT ALANI */
         .copyright {
             width: 100%;
             max-width: 1350px;          
@@ -259,7 +260,6 @@
         <div>
             <div class="video-wrapper" 
                  id="videoContainer"
-                 style="background-image: url('https://img.youtube.com/vi/XjPSGuJskxM/maxresdefault.jpg');"
                  onclick="playVideo()">
                 <div class="play-button"></div>
             </div>
@@ -295,7 +295,7 @@
                 </a>
                 <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube">
                     <svg viewBox="0 0 24 24">
-                        <path d="M22.54 6.42c-.26-.92-1.04-1.65-1.94-1.88-1.7-.48-8.6-.48-8.6-.48s-6.9 0-8.6.48c-.9.23-1.68.96-1.94 1.88C1 8.12 1 12 1 12s0 3.88.46 5.58c.26.92 1.04 1.65 1.94 1.88 1.7.48 8.6.48 8.6.48s6.9 0 8.6-.48c.9-.23 1.58-.96 1.94-1.88.46-1.7.46-5.58.46-5.58s0-3.88-.46-5.58z"></path>
+                        <path d="M22.54 6.42c-.26-.92-1.04-1.65-1.94-1.88-1.7-.48-8.6-.48-8.6-.48s-6.9 0-8.6.48c-.9.23-1.68.96-1.94 1.88C1 8.12 1 12 1 12s0 3.88.46 5.58c.26.92 1.04 1.65 1.94 1.88 1.7.48 8.6.48 8.6.48s6.9 0 8.6-.48c.9-.23 1.68-.96 1.94-1.88.46-1.7.46-5.58.46-5.58s0-3.88-.46-5.58z"></path>
                         <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
                     </svg>
                 </a>
