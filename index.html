@@ -33,21 +33,21 @@
             gap: 0px; 
         }
         
-        /* Masaüstü için logo ölçüleri */
+        /* MASAÜSTÜ İÇİN GÜÇLÜ VE SİNEMATİK LOGO BOYUTU */
         .logo-icon {
-            height: 48px;         
-            width: 48px;          
-            aspect-ratio: 1 / 1;  
-            flex-shrink: 0;
-            margin-right: 12px;   
+            height: 64px !important;         /* Masaüstünde logo belirgin ve prestijli duracak */
+            width: 64px !important;          
+            aspect-ratio: 1 / 1 !important;  
+            flex-shrink: 0 !important;
+            margin-right: 14px !important;   /* Yazı ile ideal boşluk */
         }
         
-        /* Masaüstü için güçlü tek satır yazı */
+        /* MASAÜSTÜ İÇİN GÜÇLÜ TEK SATIR YAZI PUNTOALARI */
         .logo {
             font-family: 'Inter', sans-serif !important;
-            font-size: 18px;
+            font-size: 20px !important;      /* Masaüstünde jilet gibi büyük imza */
             font-weight: 700 !important;
-            letter-spacing: -0.02em; 
+            letter-spacing: -0.02em !important; 
             text-transform: uppercase;
             color: #000000;
             white-space: nowrap; 
@@ -207,25 +207,26 @@
             margin-top: 40px;
         }
 
-        /* TELEFONLAR İÇİN MOBİL UYUMLULUK SİHİRBAZI (RESPONSIVE CSS) */
+        /* TELEFONLAR İÇİN AKILLI AYRIM (SADECE MOBİLDE BOYUTLAR KÜÇÜLÜR) */
         @media (max-width: 768px) {
             body {
-                padding: 40px 16px !important; /* Mobilde ekran kenarı boşluklarını daralttık */
+                padding: 40px 16px !important;
             }
             header {
-                margin-bottom: 40px !important; /* Üst boşluğu mobilde azaltarak alanı ferahlattık */
+                margin-bottom: 40px !important;
             }
+            /* Mobilde ekrana sığması için kibarlaşan ölçüler */
             .logo-icon {
-                height: 34px !important; /* Logoyu mobilde kibarlaştırdık, taşmayı engelledik */
+                height: 34px !important; 
                 width: 34px !important;
                 margin-right: 10px !important;
             }
             .logo {
-                font-size: 14px !important; /* Fontu telefon ekranına tam sığacak ölçüye çektik */
+                font-size: 14px !important; 
                 letter-spacing: -0.01em !important;
             }
             .container {
-                gap: 40px !important; /* Mobilde dikey boşlukları optimize ettik */
+                gap: 40px !important;
             }
             .copyright {
                 padding: 40px 16px !important;
