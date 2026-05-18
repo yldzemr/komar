@@ -33,15 +33,14 @@
             gap: 0px; 
         }
         
-        /* Logonun basıklaşmasını %100 engelleyen kesin kodlar */
+        /* KOMAR ÇİÇEĞİ İÇİN GEÇİCİ HİLELİ ALAN */
+        /* Tasarımcıdan temiz dosya gelene kadar beyaz boşlukları bu kodlarla eziyoruz */
         .logo-icon {
-            height: 48px !important;       
-            width: 48px !important;        
-            aspect-ratio: 1 / 1 !important; 
+            height: 120px !important;       /* Boşluklu resmi bilerek çok büyüttük */
+            width: auto !important;         /* Çiçeğin ASLA basıklaşmamasını, kendi oranında kalmasını sağlar */
             flex-shrink: 0 !important;
-            margin-right: 15px !important;  
-            margin-left: 0 !important;
-            margin-top: 0 !important;
+            margin-left: -35px !important;  /* Soldaki devasa beyaz boşluğu ekran dışına attık */
+            margin-right: -15px !important; /* Sağdaki beyaz boşluğu yok edip yazıyı çiçeğe yaklaştırdık */
         }
         
         /* Çağlar Arts Gibi Yan Yana Tek Satır Güçlü Yazı */
@@ -215,14 +214,7 @@
 </head>
 <body>
     <header>
-        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M50 20 Q60 25 65 35 Q70 45 65 55 Q60 65 50 70 Q40 65 35 55 Q30 45 35 35 Q40 25 50 20" 
-                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M50 30 Q55 32 58 38 Q60 45 58 52 Q55 58 50 60" 
-                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <path d="M38 45 L45 45 M55 45 L62 45" 
-                  stroke="#000000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-        </svg>
+        <img src="logo.png" class="logo-icon" alt="KOMAR Logo">
         <div class="logo">KOMAR ENTERTAINMENT</div>
     </header>
     
