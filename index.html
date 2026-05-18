@@ -19,19 +19,20 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 0 20px; /* Tam ölçülerin sıfıra sıfır oturması için üst/alt padding kaldırıldı */
+            padding: 0 20px;
         }
         
-        /* TAM İSTEDİĞİN 1350x216 ÖLÇÜLERİNDE ÜST ALAN (HEADER) */
+        /* ÜST ALAN: Sabit piksel yerine nefes alan esnek tasarım */
         header {
             width: 100%;
             max-width: 1350px;
-            height: 216px !important; /* Dikey yükseklik kilitlendi */
+            padding: 60px 0; /* Üstten ve alttan gözü yormayan kurumsal boşluk */
             display: flex;
-            align-items: center;      /* Logo ve yazıyı 216px içinde dikeyde kusursuz ortalar */
+            align-items: center;
             text-align: left;
         }
         
+        /* LOGO VE ŞİRKET İSMİ YEKPARE / BÜTÜNCÜL DURUŞ */
         .brand-link {
             display: inline-flex;
             align-items: center;
@@ -41,16 +42,16 @@
         }
         
         .logo-icon {
-            height: 90px !important;         
-            width: 90px !important;          
+            height: 70px !important; /* Çağlar Arts standardında zarif amblem boyutu */         
+            width: 70px !important;          
             aspect-ratio: 1 / 1 !important;  
             flex-shrink: 0 !important;
-            margin-right: 18px !important;   
+            margin-right: 20px !important;   
         }
         
         .logo-text {
             font-family: 'Inter', sans-serif !important;
-            font-size: 26px !important;      
+            font-size: 24px !important;      
             font-weight: 700 !important;
             letter-spacing: -0.03em !important; 
             text-transform: uppercase;
@@ -62,14 +63,14 @@
             max-width: 1350px;
             display: flex;
             flex-direction: column;
-            gap: 80px;
+            gap: 80px; /* Elemanlar arasındaki sinematik boşluk */
         }
 
-        /* 1350x541 FOTOĞRAF SLIDER ALANI */
+        /* 1350x541 REEL ORANLI FOTOĞRAF SLIDERI */
         .swiper {
             width: 100%;
             max-width: 1350px !important;      
-            aspect-ratio: 1350 / 541 !important; 
+            aspect-ratio: 1350 / 541 !important; /* En ve boy ekran küçülse de hep bu oranda kalır */
             margin: 0 auto !important;
             background: #f5f5f5;
         }
@@ -100,6 +101,7 @@
             height: 12px !important;
         }
         
+        /* VİDEO ALANI */
         .video-wrapper {
             position: relative;
             width: 100%;
@@ -149,7 +151,7 @@
         .footer-contact {
             width: 100%;
             text-align: center;
-            padding: 60px 0 20px 0;
+            padding: 40px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -175,7 +177,6 @@
         .social-links {
             display: flex;
             gap: 25px;
-            margin-top: 40px;
         }
         .social-link {
             display: inline-flex;
@@ -204,51 +205,43 @@
             height: 32px;
         }
 
-        /* İNCE ÇİZGİ İLE EN ALT ARASINDAKİ 1350x167 BÖLGE (FOOTER / COPYRIGHT) */
+        /* ALT ALAN (FOOTER): Çizgili ve esnek dengeli bölge */
         .copyright {
             width: 100%;
-            max-width: 1350px;          /* Slider genişliğine eşitlendi */
-            height: 167px !important;    /* Çizgiden tabana net yükseklik */
-            border-top: 1px solid #f0f0f0; /* Bahsettiğin o ince gri çizgi */
-            display: flex;
-            align-items: center;         /* Yazıyı 167px içinde dikeyde ortalar */
+            max-width: 1350px;          
+            border-top: 1px solid #f0f0f0; /* Bahsettiğin o şık ince çizgi */
+            padding: 50px 0;               /* Çizgiden sonra aşağı doğru temiz bir boşluk bırakır */
             text-align: left;
             font-size: 12px;
             color: #000000;
             opacity: 0.6;
             font-weight: 400;
             letter-spacing: 0.5px;
-            margin-top: 40px;            /* Video alanıyla çizgi arasındaki mesafe */
+            margin-top: 40px;            
         }
 
-        /* MASAÜSTÜ İLE TAM BÜTÜNLÜK SAĞLAYAN MOBİL KORUMA */
+        /* MOBİL KORUMA AYARLARI */
         @media (max-width: 768px) {
             body {
                 padding: 0 16px !important;
             }
-            /* Mobilde kutu yüksekliklerini esneterek taşmaları önlüyoruz */
             header {
-                height: auto !important;
-                padding: 40px 0 !important;
+                padding: 30px 0 !important;
             }
             .logo-icon {
-                height: 36px !important; 
-                width: 36px !important;
-                margin-right: 10px !important;
+                height: 40px !important; 
+                width: 40px !important;
+                margin-right: 12px !important;
             }
             .logo-text {
-                font-size: 15px !important; 
+                font-size: 16px !important; 
                 letter-spacing: -0.01em !important;
-            }
-            .swiper {
-                aspect-ratio: 1350 / 541 !important; 
             }
             .container {
                 gap: 40px !important;
             }
             .copyright {
-                height: auto !important;
-                padding: 40px 0 !important;
+                padding: 30px 0 !important;
                 margin-top: 20px !important;
             }
         }
@@ -305,7 +298,7 @@
                 </a>
                 <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube">
                     <svg viewBox="0 0 24 24">
-                        <path d="M22.54 6.42c-.26-.92-1.04-1.65-1.94-1.88-1.7-.48-8.6-.48-8.6-.48s-6.9 0-8.6.48c-.9.23-1.68.96-1.94 1.88C1 8.12 1 12 1 12s0 3.88.46 5.58c.26.92 1.04 1.65 1.94 1.88 1.7.48 8.6.48 8.6.48s6.9 0 8.6-.48c.9-.23 1.68-.96 1.94-1.88.46-1.7.46-5.58.46-5.58s0-3.88-.46-5.58z"></path>
+                        <path d="M22.54 6.42c-.26-.92-1.04-1.65-1.94-1.88-1.7-.48-8.6-.48-8.6-.48s-6.9 0-8.6.48c-.9.23-1.68.96-1.94 1.88C1 8.12 1 12 1 12s0 3.88.46 5.58c.26.92 1.04 1.65 1.94 1.88 1.7.48 8.6.48 8.6.48s6.9 0 8.6-.48c.9-.23 1.58-.96 1.94-1.88.46-1.7.46-5.58.46-5.58s0-3.88-.46-5.58z"></path>
                         <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
                     </svg>
                 </a>
