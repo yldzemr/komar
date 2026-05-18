@@ -19,20 +19,20 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 0 20px;
+            padding: 0 20px; /* Kenarlardan taşmayı önleyen koruma boşluğu */
         }
         
-        /* ÜST ALAN: Sabit piksel yerine nefes alan esnek tasarım */
+        /* 1350x216 GENİŞLİK VE HACİM STANDARDINDA ÜST ALAN */
         header {
             width: 100%;
             max-width: 1350px;
-            padding: 60px 0; /* Üstten ve alttan gözü yormayan kurumsal boşluk */
+            /* 216px dikey hacmi ve ortalamayı sağlayan esnek boşluk */
+            padding: 85px 0; 
             display: flex;
             align-items: center;
             text-align: left;
         }
         
-        /* LOGO VE ŞİRKET İSMİ YEKPARE / BÜTÜNCÜL DURUŞ */
         .brand-link {
             display: inline-flex;
             align-items: center;
@@ -41,14 +41,7 @@
             cursor: pointer;
         }
         
-        .logo-icon {
-            height: 70px !important; /* Çağlar Arts standardında zarif amblem boyutu */         
-            width: 70px !important;          
-            aspect-ratio: 1 / 1 !important;  
-            flex-shrink: 0 !important;
-            margin-right: 20px !important;   
-        }
-        
+        /* LOGO ÇIKTI, SADECE JİLET GİBİ NET KURUMSAL YAZI KALDI */
         .logo-text {
             font-family: 'Inter', sans-serif !important;
             font-size: 24px !important;      
@@ -60,17 +53,17 @@
         
         .container {
             width: 100%;
-            max-width: 1350px;
+            max-width: 1350px; /* Tüm gövde 1350px aksına oturtuldu */
             display: flex;
             flex-direction: column;
-            gap: 80px; /* Elemanlar arasındaki sinematik boşluk */
+            gap: 80px; /* Tasarımda sevdiğin o sinematik boşluklar korundu */
         }
 
-        /* 1350x541 REEL ORANLI FOTOĞRAF SLIDERI */
+        /* TAM 16:9 FORMATINDA BOZULMA YAPMAYAN FOTOĞRAF SLIDERI */
         .swiper {
             width: 100%;
             max-width: 1350px !important;      
-            aspect-ratio: 1350 / 541 !important; /* En ve boy ekran küçülse de hep bu oranda kalır */
+            aspect-ratio: 16 / 9 !important; /* Kadrajın asla bozulmaz, FX30 formatı */
             margin: 0 auto !important;
             background: #f5f5f5;
         }
@@ -101,7 +94,7 @@
             height: 12px !important;
         }
         
-        /* VİDEO ALANI */
+        /* VİDEO ALANI (SEVDİĞİN MEVCUT YAPI AYREN KORUNDU) */
         .video-wrapper {
             position: relative;
             width: 100%;
@@ -205,12 +198,13 @@
             height: 32px;
         }
 
-        /* ALT ALAN (FOOTER): Çizgili ve esnek dengeli bölge */
+        /* 1350x167 STANDARDINDA, İNCE ÇİZGİLİ ALT ALAN (FOOTER) */
         .copyright {
             width: 100%;
             max-width: 1350px;          
-            border-top: 1px solid #f0f0f0; /* Bahsettiğin o şık ince çizgi */
-            padding: 50px 0;               /* Çizgiden sonra aşağı doğru temiz bir boşluk bırakır */
+            border-top: 1px solid #f0f0f0; /* İstediğin o şık ince ayraç çizgisi */
+            /* Masaüstünde çizgiden tabana 167px derinlik hissi veren esnek boşluk */
+            padding: 75px 0;               
             text-align: left;
             font-size: 12px;
             color: #000000;
@@ -220,28 +214,27 @@
             margin-top: 40px;            
         }
 
-        /* MOBİL KORUMA AYARLARI */
+        /* MOBİL UYUM KORUMASI (Masaüstü bütünlüğünü mobilde de korur) */
         @media (max-width: 768px) {
             body {
                 padding: 0 16px !important;
             }
             header {
-                padding: 30px 0 !important;
-            }
-            .logo-icon {
-                height: 40px !important; 
-                width: 40px !important;
-                margin-right: 12px !important;
+                padding: 40px 0 !important; /* Mobilde dikey alanı daraltır */
             }
             .logo-text {
                 font-size: 16px !important; 
                 letter-spacing: -0.01em !important;
             }
+            /* Slider mobilde de kusursuz bir 16:9 olarak küçülür */
+            .swiper {
+                aspect-ratio: 16 / 9 !important; 
+            }
             .container {
                 gap: 40px !important;
             }
             .copyright {
-                padding: 30px 0 !important;
+                padding: 40px 0 !important;
                 margin-top: 20px !important;
             }
         }
@@ -253,7 +246,6 @@
 <body>
     <header>
         <a href="index.html" class="brand-link">
-            <img src="logo.png" class="logo-icon" alt="KOMAR Logo">
             <div class="logo-text">KOMAR ENTERTAINMENT</div>
         </a>
     </header>
@@ -262,14 +254,14 @@
         <div>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=1" alt="Foto 1"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=2" alt="Foto 2"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=3" alt="Foto 3"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=4" alt="Foto 4"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=5" alt="Foto 5"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=6" alt="Foto 6"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=7" alt="Foto 7"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1350/541?random=8" alt="Foto 8"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=1" alt="Foto 1"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=2" alt="Foto 2"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=3" alt="Foto 3"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=4" alt="Foto 4"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=5" alt="Foto 5"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=6" alt="Foto 6"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=7" alt="Foto 7"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=8" alt="Foto 8"></div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -298,7 +290,7 @@
                 </a>
                 <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube">
                     <svg viewBox="0 0 24 24">
-                        <path d="M22.54 6.42c-.26-.92-1.04-1.65-1.94-1.88-1.7-.48-8.6-.48-8.6-.48s-6.9 0-8.6.48c-.9.23-1.68.96-1.94 1.88C1 8.12 1 12 1 12s0 3.88.46 5.58c.26.92 1.04 1.65 1.94 1.88 1.7.48 8.6.48 8.6.48s6.9 0 8.6-.48c.9-.23 1.58-.96 1.94-1.88.46-1.7.46-5.58.46-5.58s0-3.88-.46-5.58z"></path>
+                        <path d="M22.54 6.42c-.26-.92-1.04-1.65-1.94-1.88-1.7-.48-8.6-.48-8.6-.48s-6.9 0-8.6.48c-.9.23-1.68.96-1.94 1.88C1 8.12 1 12 1 12s0 3.88.46 5.58c.26.92 1.04 1.65 1.94 1.88 1.7.48 8.6.48 8.6.48s6.9 0 8.6-.48c.9-.23 1.68-.96 1.94-1.88.46-1.7.46-5.58.46-5.58s0-3.88-.46-5.58z"></path>
                         <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
                     </svg>
                 </a>
