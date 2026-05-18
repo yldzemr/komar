@@ -6,6 +6,11 @@
     <title>KOMAR</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
+        /* SİNEMATİK AKIŞIN GİZLİ SİLAHI: SAYFA KAYDIRMAYI SU GİBİ YAPAR */
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -22,6 +27,7 @@
             align-items: center;
             min-height: 100vh;
             padding: 0 20px;
+            -webkit-font-smoothing: antialiased; /* Fontları daha pürüzsüz basar */
         }
         
         /* ÜST ALAN (HEADER) */
@@ -42,7 +48,7 @@
             cursor: pointer;
         }
         
-        /* SCOTT FREE AYARINDA GÜÇLÜ OSWALD FONTU */
+        /* GÜÇLÜ OSWALD FONTU */
         .logo-text {
             font-family: 'Oswald', sans-serif !important;
             font-size: 26px !important;      
@@ -166,7 +172,7 @@
         .footer-contact {
             width: 100%;
             text-align: center;
-            padding: 20px 0 40px 0; 
+            padding: 40px 0 60px 0; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -236,14 +242,12 @@
         }
 
         /* ======================================================= */
-        /* MOBİLİ KÖKÜNDEN DÜZELTEN, ORANTILI VE STABİL YENİ ALAN */
+        /* MOBİLİ SİNEMATİK AKIŞA KAVUŞTURAN ALAN                  */
         /* ======================================================= */
         @media (max-width: 768px) {
             body {
                 padding: 0 16px !important;
             }
-            
-            /* Logo ve üst boşluk stabil hale getirildi */
             header {
                 padding: 40px 0 25px 0 !important;
             }
@@ -252,11 +256,10 @@
                 letter-spacing: 0.05em !important;
             }
             
-            /* Zorlama dikey yükseklikler temizlendi */
-            /* Video kendi 16:9 oranında temizce oturacak */
+            /* Elemanlar arası geçiş sertliğini kıran yumuşak paylar */
             .video-block {
                 height: auto !important; 
-                margin-bottom: 60px !important; /* Slider ile arasındaki dengeli nefes payı */
+                margin-bottom: 50px !important; 
             }
             
             .video-wrapper {
@@ -264,10 +267,9 @@
                 width: 100% !important;
             }
 
-            /* Slider'ı aşağı çeken ve contact butonunun ilk açılışta ekrana sızmasını */
-            /* tarayıcıyı bozmadan engelleyen akıllı piksel bariyeri */
+            /* Slider bittikten sonra contact alanına geçişi "nefesli" yapan lüks mesafe */
             .slider-block {
-                margin-bottom: 140px !important; 
+                margin-bottom: 160px !important; 
             }
             
             .swiper {
@@ -275,10 +277,10 @@
                 width: 100% !important; 
             }
             
-            /* İletişim alanının dikeydeki sıkışıklığı giderildi */
+            /* İletişim alanı daha oturaklı ve premium bir boşlukla geliyor */
             .footer-contact {
-                padding: 40px 0 20px 0 !important; 
-                gap: 25px !important;
+                padding: 60px 0 40px 0 !important; 
+                gap: 30px !important;
             }
             .copyright {
                 padding: 30px 0 !important;
