@@ -25,36 +25,65 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 2. ÖNERİ: CANLI FİLM GRENİ KATMANI (SUBTLE FILM GRAIN) */
-        .film-grain {
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            right: -50%;
-            bottom: -50%;
-            width: 200%;
-            height: 200%;
-            /* Dijital gürültüyü analog sinema grenine dönüştüren matematiksel SVG kodu */
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.04; /* Dokunun zarafeti için %4 oranında çok hafif tutuldu */
-            pointer-events: none; /* Altındaki butonlara tıklanmasını engellemez */
-            z-index: 9999; /* Her zaman en üstte yaşar ama şeffaftır */
-            animation: grain-vibration 0.5s steps(10) infinite; /* Donanım hızlandırmalı 24fps titreme */
+        /* ==========================================================================
+           1. ÖNERİ: SİNEMATİK AÇILIŞ ANIMASYONLARI (CINEMA FADE-IN)
+           ========================================================================== */
+        
+        /* Ana objeleri yukarıdan aşağıya pürüzsüzce süzerek var eden matematiksel eğri */
+        @keyframes cinemaFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* Gren katmanını organik olarak titreten sinematik döngü */
-        @keyframes grain-vibration {
-            0%, 100% { transform:translate(0, 0); }
-            10% { transform:translate(-5%, -10%); }
-            20% { transform:translate(-15%, 5%); }
-            30% { transform:translate(7%, -25%); }
-            40% { transform:translate(-5%, 25%); }
-            50% { transform:translate(-15%, 10%); }
-            60% { transform:translate(15%, 0%); }
-            70% { transform:translate(0%, 15%); }
-            80% { transform:translate(3%, 35%); }
-            90% { transform:translate(-10%, 10%); }
+        /* Copyright alanının kendi %50 opaklık dengesini koruyan özel animasyon */
+        @keyframes copyrightFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+            to {
+                opacity: 0.5;
+                transform: translateY(0);
+            }
         }
+
+        /* Elemanların donanım ivmeli (hardware accelerated) pürüzsüz çalışması için temel kurallar */
+        header, .slider-block, .video-block, .footer-contact, .copyright {
+            will-change: transform, opacity;
+        }
+
+        /* Kademeli Zamanlama Tetiklemeleri (Stagger Effect) */
+        header {
+            opacity: 0;
+            animation: cinemaFadeIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0s forwards;
+        }
+
+        .slider-block {
+            opacity: 0;
+            animation: cinemaFadeIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.2s forwards;
+        }
+
+        .video-block {
+            opacity: 0;
+            animation: cinemaFadeIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.4s forwards;
+        }
+
+        .footer-contact {
+            opacity: 0;
+            animation: cinemaFadeIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.6s forwards;
+        }
+
+        .copyright {
+            opacity: 0;
+            animation: copyrightFadeIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.7s forwards;
+        }
+        /* ========================================================================== */
         
         /* ÜST ALAN (MERKEZİ LOGO DÜZENİ) */
         header {
@@ -90,7 +119,7 @@
             flex-direction: column;
         }
 
-        /* 1. SIRADA: FOTOĞRAF BLOK KUTUSU (ÜSTTE SABİT) */
+        /* 1. SIRADA: FOTOĞRAF BLOK KUTUSU */
         .slider-block {
             width: 100%;
             margin-bottom: 90px; 
@@ -131,7 +160,7 @@
             height: 12px !important;
         }
 
-        /* 2. SIRADA: VİDEO BLOK KUTUSU (ALTTA SABİT) */
+        /* 2. SIRADA: VİDEO BLOK KUTUSU */
         .video-block {
             width: 100%;
             margin-bottom: 90px !important; 
@@ -252,10 +281,9 @@
             text-align: left;
             font-size: 12px;
             color: #111111;
-            opacity: 0.5;
+            margin-top: 40px;            
             font-weight: 400;
             letter-spacing: 0.5px;
-            margin-top: 40px;            
         }
 
         /* MOBİL UYUM ALANI */
@@ -299,8 +327,6 @@
     </style>
 </head>
 <body>
-
-    <div class="film-grain"></div>
 
     <header>
         <a href="index.html" class="brand-link">
