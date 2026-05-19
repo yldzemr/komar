@@ -25,11 +25,11 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* ÜST ALAN (HEADER) */
+        /* ÜST ALAN (YENİ TEK SATIR LOGO HİZALAMASI) */
         header {
             width: 100%;
             max-width: 1350px;
-            padding: 85px 0 45px 0; 
+            padding: 75px 0 45px 0; 
             display: flex;
             align-items: center;
             text-align: left;
@@ -39,70 +39,26 @@
             display: inline-flex;
             align-items: center;
             text-decoration: none;
-            color: #111111;
             cursor: pointer;
         }
         
-        .logo-text {
-            font-family: 'Oswald', sans-serif !important;
-            font-size: 26px !important;      
-            font-weight: 700 !important;
-            letter-spacing: 0.08em !important; 
-            text-transform: uppercase;
-            white-space: nowrap; 
+        /* Tek satır logomuzu masaüstünde kibar ama iddialı gösteren kural */
+        .logo-image {
+            height: 44px; 
+            width: auto;  
+            display: block;
+            object-fit: contain;
         }
         
         /* ANA İÇERİK GÖVDESİ */
         .container {
             width: 100%;
             max-width: 1350px;
-            margin: 0 auto;
             display: flex;
             flex-direction: column;
         }
 
-        /* 1. SIRADA: FOTOĞRAF BLOK KUTUSU (İLK DOĞRU AYARIN) */
-        .slider-block {
-            width: 100%;
-            margin-bottom: 90px; 
-        }
-
-        .swiper {
-            width: 100%;
-            max-width: 1350px !important;      
-            aspect-ratio: 16 / 9 !important; 
-            margin: 0 auto !important;
-            background-color: #ffffff !important; 
-        }
-        .swiper-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            sizes: "(max-width: 480px) 480px, (max-width: 768px) 768px, 1920px";
-        }
-
-        .swiper-button-next, .swiper-button-prev {
-            color: #ffffff !important;
-            transform: scale(0.7);
-        }
-        .swiper-pagination {
-            bottom: 20px !important;
-        }
-        .swiper-pagination-bullet {
-            background-color: #ffffff !important;
-            opacity: 0.6;
-            width: 10px !important;
-            height: 10px !important;
-            transition: all 0.3s ease;
-        }
-        .swiper-pagination-bullet-active {
-            background-color: #ffffff !important;
-            opacity: 1;
-            width: 12px !important;
-            height: 12px !important;
-        }
-
-        /* 2. SIRADA: VİDEO BLOK KUTUSU */
+        /* VİDEO BLOK KUTUSU (ÜSTTEKİ YERİNİ KORUYOR) */
         .video-block {
             width: 100%;
             margin-bottom: 90px !important; 
@@ -112,6 +68,7 @@
             position: relative;
             width: 100%;
             max-width: 1350px;
+            max-width: 120vh !important; 
             aspect-ratio: 16 / 9 !important; 
             margin: 0 auto !important;
             background-color: #000000 !important;
@@ -145,10 +102,6 @@
             z-index: 10;
             transition: all 0.3s ease;
         }
-        .play-button:hover {
-            background: rgba(255, 255, 255, 1);
-            transform: scale(1.1);
-        }
         .play-button::after {
             content: '';
             width: 0;
@@ -158,8 +111,49 @@
             border-bottom: 10px solid transparent;
             margin-left: 3px;
         }
+
+        /* FOTOĞRAF BLOK KUTUSU (ALTTAKİ YERİNİ KORUYOR) */
+        .slider-block {
+            width: 100%;
+            margin-bottom: 90px; 
+        }
+
+        .swiper {
+            width: 100%;
+            max-width: 1350px !important;      
+            max-width: 120vh !important; 
+            aspect-ratio: 16 / 9 !important; 
+            margin: 0 auto !important;
+            background-color: #ffffff !important; 
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: #ffffff !important;
+            transform: scale(0.7);
+        }
+        .swiper-pagination {
+            bottom: 20px !important;
+        }
+        .swiper-pagination-bullet {
+            background-color: #ffffff !important;
+            opacity: 0.6;
+            width: 10px !important;
+            height: 10px !important;
+            transition: all 0.3s ease;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #ffffff !important;
+            opacity: 1;
+            width: 12px !important;
+            height: 12px !important;
+        }
         
-        /* 3. SIRADA: İLETİŞİM ALANI */
+        /* İLETİŞİM ALANI */
         .footer-contact {
             width: 100%;
             text-align: center;
@@ -220,46 +214,19 @@
         /* COPYRIGHT ALANI */
         .copyright {
             width: 100%;
-            max-width: 1350px;
-            margin: 40px auto 0 auto;
+            max-width: 1350px;          
             border-top: 1px solid #eeeeee; 
-            padding: 75px 20px;               
+            padding: 75px 0;               
             text-align: left;
             font-size: 12px;
             color: #111111;
             opacity: 0.5;
             font-weight: 400;
             letter-spacing: 0.5px;
+            margin-top: 40px;            
         }
 
-        /* TABLET BREAKPOINT (1024px) */
-        @media (max-width: 1024px) {
-            body {
-                padding: 0 20px !important;
-            }
-            header {
-                padding: 60px 0 35px 0 !important;
-            }
-            .logo-text {
-                font-size: 22px !important;
-            }
-            .slider-block {
-                margin-bottom: 90px !important;
-            }
-            .video-block {
-                margin-bottom: 90px !important;
-            }
-            .footer-contact {
-                padding: 50px 0 30px 0 !important;
-                gap: 30px !important;
-            }
-            .copyright {
-                padding: 50px 20px !important;
-                margin-top: 30px !important;
-            }
-        }
-
-        /* MOBİL DENGELİ KİLİTLEME ALANI */
+        /* MOBİL UYUM ALANI */
         @media (max-width: 768px) {
             body {
                 padding: 0 16px !important;
@@ -267,110 +234,67 @@
             header {
                 padding: 40px 0 25px 0 !important;
             }
-            .logo-text {
-                font-size: 18px !important; 
-                letter-spacing: 0.05em !important;
+            
+            .logo-image {
+                height: 28px !important; 
             }
             
-            /* Üstteki slider'ın mobil temizliği */
-            .slider-block {
-                margin-bottom: 90px !important; 
-            }
-            .swiper {
-                aspect-ratio: 16 / 9 !important; 
-                width: 100% !important; 
-            }
-            
-            /* Alttaki videonun mobil temizliği */
             .video-block {
-                margin-bottom: 100px !important; 
+                margin-bottom: 80px !important; 
             }
             .video-wrapper {
                 aspect-ratio: 16 / 9 !important;
                 width: 100% !important;
             }
 
-            .play-button {
-                width: 50px !important;
-                height: 50px !important;
+            .slider-block {
+                margin-bottom: 60px !important; 
+            }
+            .swiper {
+                aspect-ratio: 16 / 9 !important; 
+                width: 100% !important; 
             }
             
             .footer-contact {
-                padding: 60px 0 20px 0 !important; 
+                padding: 40px 0 20px 0 !important; 
                 gap: 25px !important;
             }
             .copyright {
-                padding: 40px 16px !important;
+                padding: 30px 0 !important;
                 margin-top: 20px !important;
-                font-size: 11px !important;
-            }
-        }
-
-        /* KÜÇÜK MOBIL (480px altı - iPhone SE, eski cihazlar) */
-        @media (max-width: 480px) {
-            body {
-                padding: 0 12px !important;
-            }
-            header {
-                padding: 30px 0 20px 0 !important;
-            }
-            .logo-text {
-                font-size: 16px !important;
-                letter-spacing: 0.04em !important;
-            }
-            .slider-block {
-                margin-bottom: 85px !important;
-            }
-            .video-block {
-                margin-bottom: 95px !important;
-            }
-            .footer-contact {
-                padding: 55px 0 15px 0 !important;
-                gap: 20px !important;
-            }
-            .contact-btn {
-                padding: 12px 35px !important;
-                font-size: 12px !important;
-            }
-            .copyright {
-                padding: 30px 12px !important;
-                margin-top: 15px !important;
             }
         }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <a href="index.html" class="brand-link">
-            <div class="logo-text">KOMAR ENTERTAINMENT</div>
+            <img src="logo.png" alt="KOMAR ENTERTAINMENT" class="logo-image">
         </a>
     </header>
     
     <div class="container">
+        <div class="video-block">
+            <div class="video-wrapper" id="videoContainer" onclick="playVideo()">
+                <div class="play-button"></div>
+            </div>
+        </div>
+
         <div class="slider-block">
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=1 480w, https://picsum.photos/768/432?random=1 768w, https://picsum.photos/1920/1080?random=1 1920w" src="https://picsum.photos/1920/1080?random=1" alt="Foto 1"></div>
-                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=2 480w, https://picsum.photos/768/432?random=2 768w, https://picsum.photos/1920/1080?random=2 1920w" src="https://picsum.photos/1920/1080?random=2" alt="Foto 2"></div>
-                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=3 480w, https://picsum.photos/768/432?random=3 768w, https://picsum.photos/1920/1080?random=3 1920w" src="https://picsum.photos/1920/1080?random=3" alt="Foto 3"></div>
-                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=4 480w, https://picsum.photos/768/432?random=4 768w, https://picsum.photos/1920/1080?random=4 1920w" src="https://picsum.photos/1920/1080?random=4" alt="Foto 4"></div>
-                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=5 480w, https://picsum.photos/768/432?random=5 768w, https://picsum.photos/1920/1080?random=5 1920w" src="https://picsum.photos/1920/1080?random=5" alt="Foto 5"></div>
-                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=6 480w, https://picsum.photos/768/432?random=6 768w, https://picsum.photos/1920/1080?random=6 1920w" src="https://picsum.photos/1920/1080?random=6" alt="Foto 6"></div>
-                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=7 480w, https://picsum.photos/768/432?random=7 768w, https://picsum.photos/1920/1080?random=7 1920w" src="https://picsum.photos/1920/1080?random=7" alt="Foto 7"></div>
-                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=8 480w, https://picsum.photos/768/432?random=8 768w, https://picsum.photos/1920/1080?random=8 1920w" src="https://picsum.photos/1920/1080?random=8" alt="Foto 8"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=1" alt="Foto 1"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=2" alt="Foto 2"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=3" alt="Foto 3"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=4" alt="Foto 4"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=5" alt="Foto 5"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=6" alt="Foto 6"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=7" alt="Foto 7"></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=8" alt="Foto 8"></div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
-            </div>
-        </div>
-
-        <div class="video-block">
-            <div class="video-wrapper" id="videoContainer" onclick="playVideo()">
-                <div class="play-button"></div>
             </div>
         </div>
 
