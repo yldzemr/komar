@@ -24,14 +24,45 @@
             padding: 0 20px;
             -webkit-font-smoothing: antialiased;
         }
+
+        /* 2. ÖNERİ: CANLI FİLM GRENİ KATMANI (SUBTLE FILM GRAIN) */
+        .film-grain {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            width: 200%;
+            height: 200%;
+            /* Dijital gürültüyü analog sinema grenine dönüştüren matematiksel SVG kodu */
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04; /* Dokunun zarafeti için %4 oranında çok hafif tutuldu */
+            pointer-events: none; /* Altındaki butonlara tıklanmasını engellemez */
+            z-index: 9999; /* Her zaman en üstte yaşar ama şeffaftır */
+            animation: grain-vibration 0.5s steps(10) infinite; /* Donanım hızlandırmalı 24fps titreme */
+        }
+
+        /* Gren katmanını organik olarak titreten sinematik döngü */
+        @keyframes grain-vibration {
+            0%, 100% { transform:translate(0, 0); }
+            10% { transform:translate(-5%, -10%); }
+            20% { transform:translate(-15%, 5%); }
+            30% { transform:translate(7%, -25%); }
+            40% { transform:translate(-5%, 25%); }
+            50% { transform:translate(-15%, 10%); }
+            60% { transform:translate(15%, 0%); }
+            70% { transform:translate(0%, 15%); }
+            80% { transform:translate(3%, 35%); }
+            90% { transform:translate(-10%, 10%); }
+        }
         
-        /* ÜST ALAN (YENİ MERKEZİ LOGO DÜZENİ) */
+        /* ÜST ALAN (MERKEZİ LOGO DÜZENİ) */
         header {
             width: 100%;
             max-width: 1350px;
             padding: 85px 0 55px 0; 
             display: flex;
-            justify-content: center; /* Logoyu yatayda tam ortalayan sihirli dokunuş */
+            justify-content: center; 
             align-items: center;
             text-align: center;
         }
@@ -59,7 +90,7 @@
             flex-direction: column;
         }
 
-        /* 1. SIRADA: FOTOĞRAF BLOK KUTUSU */
+        /* 1. SIRADA: FOTOĞRAF BLOK KUTUSU (ÜSTTE SABİT) */
         .slider-block {
             width: 100%;
             margin-bottom: 90px; 
@@ -100,7 +131,7 @@
             height: 12px !important;
         }
 
-        /* 2. SIRADA: VİDEO BLOK KUTUSU */
+        /* 2. SIRADA: VİDEO BLOK KUTUSU (ALTTA SABİT) */
         .video-block {
             width: 100%;
             margin-bottom: 90px !important; 
@@ -233,7 +264,7 @@
                 padding: 0 16px !important;
             }
             header {
-                padding: 45px 0 35px 0 !important; /* Mobilde de merkez dengesi korundu */
+                padding: 45px 0 35px 0 !important; 
             }
             
             .logo-image {
@@ -268,6 +299,9 @@
     </style>
 </head>
 <body>
+
+    <div class="film-grain"></div>
+
     <header>
         <a href="index.html" class="brand-link">
             <img src="logo.png" alt="KOMAR ENTERTAINMENT" class="logo-image">
