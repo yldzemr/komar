@@ -6,8 +6,6 @@
     <title>KOMAR</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-        /* OTOMATİK KAYMA SORUNU İÇİN SCROLL BEHAVIOR SİLİNMİŞTİR */
-        
         * {
             margin: 0;
             padding: 0;
@@ -27,14 +25,15 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* ÜST ALAN (LOGO MİMARİSİ GÜNCELLENDİ) */
+        /* ÜST ALAN (YENİ MERKEZİ LOGO DÜZENİ) */
         header {
             width: 100%;
             max-width: 1350px;
-            padding: 85px 0 55px 0; /* Alttaki objelerle logo arası biraz daha açıldı */
+            padding: 85px 0 55px 0; 
             display: flex;
+            justify-content: center; /* Logoyu yatayda tam ortalayan sihirli dokunuş */
             align-items: center;
-            text-align: left;
+            text-align: center;
         }
         
         .brand-link {
@@ -44,9 +43,9 @@
             cursor: pointer;
         }
         
-        /* LOGO BOYUTU: Masaüstünde daha heybetli ve okunaklı yapıldı */
+        /* LOGO BOYUTU */
         .logo-image {
-            height: 72px; /* 44px'den 72px'e çıkarılarak ağırlığı artırıldı */
+            height: 72px; 
             width: auto;  
             display: block;
             object-fit: contain;
@@ -60,7 +59,7 @@
             flex-direction: column;
         }
 
-        /* 1. SIRADA: FOTOĞRAF BLOK KUTUSU (İSTEDİĞİN GİBİ ÜSTE ALINDI) */
+        /* 1. SIRADA: FOTOĞRAF BLOK KUTUSU */
         .slider-block {
             width: 100%;
             margin-bottom: 90px; 
@@ -101,7 +100,7 @@
             height: 12px !important;
         }
 
-        /* 2. SIRADA: VİDEO BLOK KUTUSU (ALTA ALINDI) */
+        /* 2. SIRADA: VİDEO BLOK KUTUSU */
         .video-block {
             width: 100%;
             margin-bottom: 90px !important; 
@@ -228,18 +227,17 @@
             margin-top: 40px;            
         }
 
-        /* MOBİL UYUM ALANI (GÜNCELLENDİ) */
+        /* MOBİL UYUM ALANI */
         @media (max-width: 768px) {
             body {
                 padding: 0 16px !important;
             }
             header {
-                padding: 40px 0 35px 0 !important;
+                padding: 45px 0 35px 0 !important; /* Mobilde de merkez dengesi korundu */
             }
             
-            /* LOGO BOYUTU: Mobilde "küçük kalma" sorunu için büyütüldü */
             .logo-image {
-                height: 48px !important; /* 28px'den 48px'e çıkarılarak görünürlük artırıldı */
+                height: 48px !important; 
             }
             
             .slider-block {
