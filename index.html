@@ -24,75 +24,15 @@
             padding: 0 20px;
             -webkit-font-smoothing: antialiased;
         }
-
-        /* ==========================================================================
-           1. ÖNERİ: SİNEMATİK AÇILIŞ ANIMASYONLARI (CINEMA FADE-IN)
-           ========================================================================== */
         
-        /* Ana objeleri yukarıdan aşağıya pürüzsüzce süzerek var eden matematiksel eğri */
-        @keyframes cinemaFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Copyright alanının kendi %50 opaklık dengesini koruyan özel animasyon */
-        @keyframes copyrightFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-12px);
-            }
-            to {
-                opacity: 0.5;
-                transform: translateY(0);
-            }
-        }
-
-        /* Elemanların donanım ivmeli (hardware accelerated) pürüzsüz çalışması için temel kurallar */
-        header, .slider-block, .video-block, .footer-contact, .copyright {
-            will-change: transform, opacity;
-        }
-
-        /* Kademeli Zamanlama Tetiklemeleri (Stagger Effect) */
-        header {
-            opacity: 0;
-            animation: cinemaFadeIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0s forwards;
-        }
-
-        .slider-block {
-            opacity: 0;
-            animation: cinemaFadeIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.2s forwards;
-        }
-
-        .video-block {
-            opacity: 0;
-            animation: cinemaFadeIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.4s forwards;
-        }
-
-        .footer-contact {
-            opacity: 0;
-            animation: cinemaFadeIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.6s forwards;
-        }
-
-        .copyright {
-            opacity: 0;
-            animation: copyrightFadeIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.7s forwards;
-        }
-        /* ========================================================================== */
-        
-        /* ÜST ALAN (MERKEZİ LOGO DÜZENİ) */
+        /* ÜST ALAN (HEADER) */
         header {
             width: 100%;
             max-width: 1350px;
-            padding: 85px 0 55px 0; 
+            padding: 85px 0 45px 0; 
             display: flex;
-            justify-content: center; 
             align-items: center;
+            justify-content: center;
             text-align: center;
         }
         
@@ -100,26 +40,28 @@
             display: inline-flex;
             align-items: center;
             text-decoration: none;
+            color: #111111;
             cursor: pointer;
         }
         
-        /* LOGO BOYUTU */
-        .logo-image {
-            height: 72px; 
-            width: auto;  
-            display: block;
-            object-fit: contain;
-        }
         
+        /* LOGO (SVG) */
+        .brand-logo {
+            display: block;
+            height: 60px;
+            width: auto;
+        }
+
         /* ANA İÇERİK GÖVDESİ */
         .container {
             width: 100%;
             max-width: 1350px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
         }
 
-        /* 1. SIRADA: FOTOĞRAF BLOK KUTUSU */
+        /* 1. SIRADA: FOTOĞRAF BLOK KUTUSU (İLK DOĞRU AYARIN) */
         .slider-block {
             width: 100%;
             margin-bottom: 90px; 
@@ -128,7 +70,6 @@
         .swiper {
             width: 100%;
             max-width: 1350px !important;      
-            max-width: 120vh !important; 
             aspect-ratio: 16 / 9 !important; 
             margin: 0 auto !important;
             background-color: #ffffff !important; 
@@ -136,7 +77,7 @@
         .swiper-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover; 
+            object-fit: cover;
         }
 
         .swiper-button-next, .swiper-button-prev {
@@ -170,7 +111,6 @@
             position: relative;
             width: 100%;
             max-width: 1350px;
-            max-width: 120vh !important; 
             aspect-ratio: 16 / 9 !important; 
             margin: 0 auto !important;
             background-color: #000000 !important;
@@ -204,6 +144,10 @@
             z-index: 10;
             transition: all 0.3s ease;
         }
+        .play-button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+        }
         .play-button::after {
             content: '';
             width: 0;
@@ -214,7 +158,7 @@
             margin-left: 3px;
         }
         
-        /* İLETİŞİM ALANI */
+        /* 3. SIRADA: İLETİŞİM ALANI */
         .footer-contact {
             width: 100%;
             text-align: center;
@@ -275,62 +219,162 @@
         /* COPYRIGHT ALANI */
         .copyright {
             width: 100%;
-            max-width: 1350px;          
+            max-width: 1350px;
+            margin: 40px auto 0 auto;
             border-top: 1px solid #eeeeee; 
-            padding: 75px 0;               
+            padding: 75px 20px;               
             text-align: left;
             font-size: 12px;
             color: #111111;
-            margin-top: 40px;            
+            opacity: 0.5;
             font-weight: 400;
             letter-spacing: 0.5px;
         }
 
-        /* MOBİL UYUM ALANI */
+        /* TABLET BREAKPOINT (1024px) */
+        @media (max-width: 1024px) {
+            .brand-logo {
+                height: 48px !important;
+            }
+            body {
+                padding: 0 20px !important;
+            }
+            header {
+                padding: 60px 0 35px 0 !important;
+            }
+            .slider-block {
+                margin-bottom: 90px !important;
+            }
+            .video-block {
+                margin-bottom: 90px !important;
+            }
+            .footer-contact {
+                padding: 50px 0 30px 0 !important;
+                gap: 30px !important;
+            }
+            .copyright {
+                padding: 50px 20px !important;
+                margin-top: 30px !important;
+            }
+        }
+
+        /* MOBİL DENGELİ KİLİTLEME ALANI */
         @media (max-width: 768px) {
+            .brand-logo {
+                height: 40px !important;
+            }
             body {
                 padding: 0 16px !important;
             }
             header {
-                padding: 45px 0 35px 0 !important; 
+                padding: 40px 0 25px 0 !important;
             }
             
-            .logo-image {
-                height: 48px !important; 
-            }
-            
+            /* Üstteki slider'ın mobil temizliği */
             .slider-block {
-                margin-bottom: 60px !important; 
+                margin-bottom: 90px !important; 
             }
             .swiper {
                 aspect-ratio: 16 / 9 !important; 
                 width: 100% !important; 
             }
             
+            /* Alttaki videonun mobil temizliği */
             .video-block {
-                margin-bottom: 80px !important; 
+                margin-bottom: 100px !important; 
             }
             .video-wrapper {
                 aspect-ratio: 16 / 9 !important;
                 width: 100% !important;
             }
+
+            .play-button {
+                width: 50px !important;
+                height: 50px !important;
+            }
             
             .footer-contact {
-                padding: 40px 0 20px 0 !important; 
+                padding: 60px 0 20px 0 !important; 
                 gap: 25px !important;
             }
             .copyright {
-                padding: 30px 0 !important;
+                padding: 40px 16px !important;
                 margin-top: 20px !important;
+                font-size: 11px !important;
+            }
+        }
+
+        /* KÜÇÜK MOBIL (480px altı - iPhone SE, eski cihazlar) */
+        @media (max-width: 480px) {
+            .brand-logo {
+                height: 40px !important;
+            }
+            body {
+                padding: 0 12px !important;
+            }
+            header {
+                padding: 30px 0 20px 0 !important;
+            }
+            .slider-block {
+                margin-bottom: 85px !important;
+            }
+            .video-block {
+                margin-bottom: 95px !important;
+            }
+            .footer-contact {
+                padding: 55px 0 15px 0 !important;
+                gap: 20px !important;
+            }
+            .contact-btn {
+                padding: 12px 35px !important;
+                font-size: 12px !important;
+            }
+            .copyright {
+                padding: 30px 12px !important;
+                margin-top: 15px !important;
             }
         }
     </style>
 </head>
 <body>
-
     <header>
         <a href="index.html" class="brand-link">
-            <img src="logo.png" alt="KOMAR ENTERTAINMENT" class="logo-image">
+            <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="KOMAR Entertainment" viewBox="-12 -7 1718.56 491" class="brand-logo" role="img"><title>KOMAR Entertainment</title><g transform="translate(0.00 7) scale(1.52 1)" fill="#171717">
+<!-- main stem / subtle unbracketed serifs -->
+<path d="M9 0 H35 V340 H9 Z M0 0 H48 V5 H0 Z M0 335 H49 V340 H0 Z"/>
+<!-- light upper diagonal -->
+<path d="M143 0 H154 L53 174 Q45 181 35 179 L34 169 Z"/>
+<!-- weighted lower diagonal -->
+<path d="M39 166 L55 157 L164 340 H134 L51 189 Z"/>
+<path d="M124 335 H176 V340 H124 Z"/>
+</g>
+<g transform="translate(357.52 7) scale(1.52 1)" fill="#171717">
+<path fill-rule="evenodd" d="M73 -4 C24 -4 -1 64 -1 170 C-1 277 24 344 73 344 C122 344 147 277 147 170 C147 64 122 -4 73 -4 Z M73 9 C51 9 27 66 27 170 C27 274 51 330 73 330 C95 330 119 274 119 170 C119 66 95 9 73 9 Z"/>
+</g>
+<g transform="translate(672.48 7) scale(1.52 1)" fill="#171717">
+<!-- matched outer stems: 26 units; intentional thin strokes: 15 units -->
+<path d="M7 0 H34 V340 H7 Z M0 0 H47 V5 H0 Z M0 335 H47 V340 H0 Z"/>
+<path d="M27 0 H43 L106 335 L94 340 Z"/>
+<path d="M94 340 H109 L170 0 H155 Z"/>
+<path d="M161 0 H187 V340 H161 Z M148 0 H196 V5 H148 Z M148 335 H196 V340 H148 Z"/>
+</g>
+<g transform="translate(1061.92 7) scale(1.52 1)" fill="#171717">
+<!-- left diagonal increased from hairline to 17 units at baseline -->
+<path d="M82 -2 H90 L20 340 H2 Z"/>
+<!-- right diagonal uses 27 unit terminal; moderate 1:1.6 contrast -->
+<path d="M82 -2 H95 L166 340 H137 Z"/>
+<path d="M34 224 H132 V233 H34 Z"/>
+<path d="M0 335 H47 V340 H0 Z M121 335 H177 V340 H121 Z"/>
+</g>
+<g transform="translate(1422.48 7) scale(1.52 1)" fill="#171717">
+<path d="M8 0 H35 V340 H8 Z M0 0 H49 V5 H0 Z M0 335 H50 V340 H0 Z"/>
+<!-- broad bowl, thin horizontal tangent, thicker vertical outer edge -->
+<path fill-rule="evenodd" d="M22 0 H86 C139 0 157 40 157 97 C157 151 137 185 87 191 H22 V178 H79 C112 178 129 145 129 97 C129 48 112 13 79 13 H22 Z"/>
+<!-- leg derives from bowl, terminates strong with smooth outward flare -->
+<path d="M84 181 C103 184 113 202 123 225 L158 319 C163 330 168 335 178 335 V340 H141 C137 340 134 334 131 326 L94 228 C89 210 87 199 74 191 Z"/>
+</g>
+<path d="M165 0H1109V196H393V655H1053V850H393V1294H1103V1490H165Z" transform="translate(79.67 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M165 0H396V795C396 872 388 1026 379 1213C487 1013 544 910 617 793L1120 0H1384V1490H1153V642C1153 556 1157 417 1168 273C1102 416 1035 529 989 603L428 1490H165Z" transform="translate(193.06 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M90 1294H555V0H784V1294H1247V1490H90Z" transform="translate(326.39 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M165 0H1109V196H393V655H1053V850H393V1294H1103V1490H165Z" transform="translate(446.26 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M165 0H393V563H697C701 563 706 563 710 563L1012 0H1271L943 602C1124 670 1215 822 1215 1022C1215 1297 1044 1490 699 1490H165ZM393 758V1295H673C893 1295 984 1190 984 1022C984 855 893 758 675 758Z" transform="translate(559.65 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M90 1294H555V0H784V1294H1247V1490H90Z" transform="translate(678.88 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M51 0H298L431 393H1017L1154 0H1401L861 1490H581ZM496 583 579 829C616 943 662 1098 720 1311C779 1100 824 948 864 829L950 583Z" transform="translate(798.75 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M393 1490H165V0H393Z" transform="translate(925.92 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M165 0H396V795C396 872 388 1026 379 1213C487 1013 544 910 617 793L1120 0H1384V1490H1153V642C1153 556 1157 417 1168 273C1102 416 1035 529 989 603L428 1490H165Z" transform="translate(996.34 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M165 0H387V802C387 916 382 1107 378 1263C435 1079 494 892 528 802L837 0H1032L1337 802C1371 895 1433 1087 1486 1268C1483 1102 1478 912 1478 802V0H1705V1490H1367L1047 635C1018 553 971 387 936 254C902 390 855 555 826 635L501 1490H165Z" transform="translate(1129.67 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M165 0H1109V196H393V655H1053V850H393V1294H1103V1490H165Z" transform="translate(1283.30 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M165 0H396V795C396 872 388 1026 379 1213C487 1013 544 910 617 793L1120 0H1384V1490H1153V642C1153 556 1157 417 1168 273C1102 416 1035 529 989 603L428 1490H165Z" transform="translate(1396.70 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/><path d="M90 1294H555V0H784V1294H1247V1490H90Z" transform="translate(1530.02 465) scale(0.0634765625 -0.0634765625)" fill="#171717"/></svg>
+
         </a>
     </header>
     
@@ -338,14 +382,14 @@
         <div class="slider-block">
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=1" alt="Foto 1"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=2" alt="Foto 2"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=3" alt="Foto 3"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=4" alt="Foto 4"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=5" alt="Foto 5"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=6" alt="Foto 6"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=7" alt="Foto 7"></div>
-                    <div class="swiper-slide"><img src="https://picsum.photos/1920/1080?random=8" alt="Foto 8"></div>
+                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=1 480w, https://picsum.photos/768/432?random=1 768w, https://picsum.photos/1920/1080?random=1 1920w" src="https://picsum.photos/1920/1080?random=1" alt="Foto 1"></div>
+                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=2 480w, https://picsum.photos/768/432?random=2 768w, https://picsum.photos/1920/1080?random=2 1920w" src="https://picsum.photos/1920/1080?random=2" alt="Foto 2"></div>
+                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=3 480w, https://picsum.photos/768/432?random=3 768w, https://picsum.photos/1920/1080?random=3 1920w" src="https://picsum.photos/1920/1080?random=3" alt="Foto 3"></div>
+                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=4 480w, https://picsum.photos/768/432?random=4 768w, https://picsum.photos/1920/1080?random=4 1920w" src="https://picsum.photos/1920/1080?random=4" alt="Foto 4"></div>
+                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=5 480w, https://picsum.photos/768/432?random=5 768w, https://picsum.photos/1920/1080?random=5 1920w" src="https://picsum.photos/1920/1080?random=5" alt="Foto 5"></div>
+                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=6 480w, https://picsum.photos/768/432?random=6 768w, https://picsum.photos/1920/1080?random=6 1920w" src="https://picsum.photos/1920/1080?random=6" alt="Foto 6"></div>
+                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=7 480w, https://picsum.photos/768/432?random=7 768w, https://picsum.photos/1920/1080?random=7 1920w" src="https://picsum.photos/1920/1080?random=7" alt="Foto 7"></div>
+                    <div class="swiper-slide"><img srcset="https://picsum.photos/480/270?random=8 480w, https://picsum.photos/768/432?random=8 768w, https://picsum.photos/1920/1080?random=8 1920w" src="https://picsum.photos/1920/1080?random=8" alt="Foto 8"></div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
